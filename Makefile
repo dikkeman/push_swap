@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/09/20 18:19:09 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/09/22 13:39:39 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
 					algorithm_s.c \
 					libft/ft_atoi.c \
+					libft/ft_calloc.c \
+					libft/ft_bzero.c \
+					linkedlist.c \
 
 GREEN			=	\033[1;32m
 BLUE			=	\033[1;36m
