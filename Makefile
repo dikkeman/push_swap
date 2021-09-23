@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/09/22 13:39:39 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/09/23 18:53:17 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CFLAGS			=	-Wall -Werror -Wextra
 OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
 					algorithm_s.c \
+					algorithm_r.c \
 					libft/ft_atoi.c \
 					libft/ft_calloc.c \
 					libft/ft_bzero.c \
@@ -26,7 +27,7 @@ RED				=	\033[0;31m
 NC				=	\033[0m # No Color
 
 MESSAGE			= "$(BLUE)---\nCompiling done! Run ./push_swap\n---"
-COMP_MESSAGE	= "$(GREEN)Building C object... $(NC)%-33.33s\r"
+COMP_MESSAGE	= "$(GREEN)Building C object... $(NC)%-33.33s\r\n"
 REM_MESSAGE		= "$(RED)Removing files..."
 
 all:		$(NAME)

@@ -6,50 +6,41 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/22 13:34:04 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/09/22 18:30:57 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/09/23 18:38:43 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void create_node(struct node **head, int number)
+void	print_list(struct s_node *head)
 {
-	struct node *new_node;
+	struct s_node	*temp;
 
-	new_node = malloc(sizeof(struct node));
-	new_node->value = number;
-	new_node->next = NULL;
-	if (*head == NULL)
-		*head = new_node;
-    else
-    {
-        struct node *lastNode = *head;
-
-        while(lastNode->next != NULL)
-            lastNode = lastNode->next;
-        lastNode->next = new_node;
-    }
-}
-
-void linkedlist(int argc)
-{
-	struct node *head;
-	struct node *temp;
-	int i;
-
-	i = 0;
-	head = NULL;
-	while (i < argc)
-	{
-		create_node(&head, i);
-		i++;
-	}
 	temp = head;
+	printf("\n");
 	while (temp != NULL)
 	{
-		printf("%d --> ", temp->value);
+		printf("%d -> ", temp->value);
 		temp = temp->next;
 	}
-	printf("NULL");
-	printf("\n\n");
+	printf("NULL\n");
+}
+
+void	create_s_node(struct s_node **head, int number)
+{
+	struct s_node	*new_s_node;
+	struct s_node	*last_s_node;
+
+	new_s_node = malloc(sizeof(struct s_node));
+	last_s_node = *head;
+	new_s_node->value = number;
+	new_s_node->next = NULL;
+	if (*head == NULL)
+		*head = new_s_node;
+	else
+	{
+		while (last_s_node->next != NULL)
+			last_s_node = last_s_node->next;
+		last_s_node->next = new_s_node;
+	}
 }
