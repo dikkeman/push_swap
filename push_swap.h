@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/09/23 18:38:56 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/04 18:31:23 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	action_sb(void);
 void	action_ss(void);
 
 void	action_rra(void);
+
+void	action_sa(void);
 
 int		ft_atoi(const char *str);
 

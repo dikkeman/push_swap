@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/22 12:04:20 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/09/23 18:38:43 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/04 18:56:06 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	action_rra(void)
 	second_last->next = NULL;
 	last->next = t_main.stack_a;
 	t_main.stack_a = last;
+	write(1, "\n", 2);
 	print_rra();
 	print_list(t_main.stack_a);
 }
