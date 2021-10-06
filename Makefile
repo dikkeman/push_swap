@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/09/23 18:53:17 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/10/06 20:49:08 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,9 @@ NAME			=	push_swap
 CFLAGS			=	-Wall -Werror -Wextra
 OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
-					algorithm_s.c \
-					algorithm_r.c \
-					libft/ft_atoi.c \
-					libft/ft_calloc.c \
-					libft/ft_bzero.c \
 					linkedlist.c \
+					algorithm_s.c \
+					libft/ft_atoi.c  \
 
 GREEN			=	\033[1;32m
 BLUE			=	\033[1;36m

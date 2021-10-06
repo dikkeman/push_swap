@@ -5,42 +5,39 @@
 /*                                                     +:+                    */
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/22 13:34:04 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/09/23 18:38:43 by xvoorvaa      ########   odam.nl         */
+/*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
+/*   Updated: 2021/10/06 20:57:57 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(struct s_node *head)
+void	print_list(t_node *head)
 {
-	struct s_node	*temp;
-
-	temp = head;
 	printf("\n");
-	while (temp != NULL)
+	while (head != NULL)
 	{
-		printf("%d -> ", temp->value);
-		temp = temp->next;
+		printf("%d -> ", head->value);
+		head = head->next;
 	}
 	printf("NULL\n");
 }
 
-void	create_s_node(struct s_node **head, int number)
+void	new_node(t_node **head, int number)
 {
-	struct s_node	*new_s_node;
-	struct s_node	*last_s_node;
+	t_node	*new_node;
+	t_node	*last_node;
 
-	new_s_node = malloc(sizeof(struct s_node));
-	last_s_node = *head;
-	new_s_node->value = number;
-	new_s_node->next = NULL;
+	new_node = malloc(sizeof(t_node));
+	last_node = *head;
+	new_node->value = number;
+	new_node->next = NULL;
 	if (*head == NULL)
-		*head = new_s_node;
+		*head = new_node;
 	else
 	{
-		while (last_s_node->next != NULL)
-			last_s_node = last_s_node->next;
-		last_s_node->next = new_s_node;
+		while (last_node->next != NULL)
+			last_node = last_node->next;
+		last_node->next = new_node;
 	}
 }

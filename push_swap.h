@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/05 14:21:21 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/06 20:48:54 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,33 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-struct	s_node	{
+typedef struct		s_node {
 	int				value;
-	struct s_node	*next;
-};
+	struct	s_node	*next;
+}					t_node;
 
-struct	s_main	{
-	struct s_node	*stack_a;
-	struct s_node	*stack_b;
-}		t_main;
+struct			s_main {
+	t_node		*stack_a;
+}				t_main;
 
-int		main(int argc, char **argv);
+/*
+	LIBFT
+*/
 
-void	action_sa(void);
+int	ft_atoi(const char *str);
 
-void	action_sb(void);
+/*
+	PUSH SWAP
+*/
 
-void	action_ss(void);
+void action_sa(t_node **head);
 
-void	action_rra(void);
+/*
+	LISTS
+*/
 
-void	action_ra(void);
+void print_list(t_node *head);
 
-void	action_sa(void);
-
-int		ft_atoi(const char *str);
-
-void	*ft_calloc(size_t nitems, size_t n);
-
-void	ft_bzero(void *str, size_t n);
-
-//Lists
-
-void	create_s_node(struct s_node **head, int number);
-
-void	print_list(struct s_node *head);
+void new_node(t_node **head, int number);
 
 #endif
