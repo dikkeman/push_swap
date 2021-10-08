@@ -6,19 +6,19 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 20:43:06 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/06 20:57:34 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/08 21:12:47 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_sa(void)
+void	print_sa(void)
 {
 	write(1, "sa", 2);
 	write(1, "\n", 2);
 }
 
-void action_sa(t_node **head)
+void	action_sa(t_node **head)
 {
 	int		first;
 	int		second;

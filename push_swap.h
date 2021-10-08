@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/06 20:48:54 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/08 21:14:25 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_node {
+typedef struct s_node {
 	int				value;
-	struct	s_node	*next;
+	struct s_node	*next;
 }					t_node;
 
 struct			s_main {
@@ -29,20 +29,24 @@ struct			s_main {
 	LIBFT
 */
 
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 
 /*
 	PUSH SWAP
 */
 
-void action_sa(t_node **head);
+void	action_sa(t_node **head);
+
+void	action_ra(t_node **head);
+
+void	action_rra(t_node **head);
 
 /*
 	LISTS
 */
 
-void print_list(t_node *head);
+void	print_list(t_node *head);
 
-void new_node(t_node **head, int number);
+void	new_node(t_node **head, int number);
 
 #endif
