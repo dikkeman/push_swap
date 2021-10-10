@@ -6,17 +6,20 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/10/08 19:47:50 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/10/10 02:46:52 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
 CFLAGS			=	-Wall -Werror -Wextra
+LEAKS			=	-g3 -fsanitize=address
 OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
 					linkedlist.c \
 					algorithm_s.c \
 					algorithm_r.c \
+					algorithm_p.c \
+					algorithm_sort.c \
 					libft/ft_atoi.c  \
 
 GREEN			=	\033[1;32m
@@ -32,6 +35,11 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 	@gcc $(CFLAGS) $(SRCS) -o $(NAME)
+	@printf $(COMP_MESSAGE) $(SRCS)
+	@echo $(MESSAGE)
+
+leaks:		$(NAME)
+	@gcc $(CFLAGS) $(SRCS) $(LEAKS) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
 	@echo $(MESSAGE)
 
