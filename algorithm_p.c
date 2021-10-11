@@ -6,11 +6,21 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:45:50 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/10 02:27:51 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/11 20:23:15 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*
+	Carful noet linking it in the wrong way.
+	Stack_a and Stack_b can easily be linked to eachother.
+	The whole algorithm won't work if they are linked to eachother.
+
+	action_pb() is the first time I will use it.
+	That is why I use new_node for the first time
+	and using malloc() there.
+*/
 
 void	print_pa(void)
 {
@@ -18,20 +28,22 @@ void	print_pa(void)
 	write(1, "\n", 2);
 }
 
-void	action_pa(void)
+void	action_pa(t_node **stack_a, t_node **stack_b)
 {
+	int		data;
 	t_node	*temp;
 	t_node	*new_list;
 
 	new_list = malloc(sizeof(t_node));
-	new_list->value = t_main.stack_b->value;
-	new_list->next = t_main.stack_a;
-	t_main.stack_a = new_list;
-	temp = t_main.stack_b->next;
-	t_main.stack_b = temp;
-	free(new_list);
+	data = (*stack_b)->value;
+	temp = (*stack_b)->next;
+	new_list->value = data;
+	new_list->next = *stack_a;
+	*stack_a = new_list;
+	temp = (*stack_b)->next;
+	(*stack_b) = temp;
 	print_pa();
-	print_list(t_main.stack_a);
+	print_list(*stack_a);
 }
 
 void	print_pb(void)
@@ -40,18 +52,15 @@ void	print_pb(void)
 	write(1, "\n", 2);
 }
 
-void	action_pb(void)
+void	action_pb(t_node **stack_a, t_node **stack_b)
 {
+	int 	data;
 	t_node	*temp;
-	t_node	*new_list;
 
-	new_list = malloc(sizeof(t_node));
-	new_list->value = t_main.stack_a->value;
-	new_list->next = t_main.stack_b;
-	t_main.stack_b = new_list;
-	temp = t_main.stack_a->next;
-	t_main.stack_a = temp;
-	free(new_list);
+	data = (*stack_a)->value;
+	new_node(stack_b, data);
+	temp = (*stack_a)->next;
+	*stack_a = temp;
 	print_pb();
-	print_list(t_main.stack_b);
+	print_list(*stack_b);
 }

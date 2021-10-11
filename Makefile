@@ -6,13 +6,13 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/10/10 02:46:52 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/10/11 18:39:55 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
 CFLAGS			=	-Wall -Werror -Wextra
-LEAKS			=	-g3 -fsanitize=address
+LEAKS			=	-g3 #-fsanitize=address
 OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
 					linkedlist.c \
