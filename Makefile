@@ -6,18 +6,20 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/10/11 18:39:55 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/10/19 21:20:59 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
 CFLAGS			=	-Wall -Werror -Wextra
-LEAKS			=	-g3 #-fsanitize=address
+LEAKS			=	-g3 -fsanitize=address
 OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
 					linkedlist.c \
-					algorithm_s.c \
-					algorithm_r.c \
+					stack_a/algorithm_sa.c \
+					stack_a/algorithm_ra.c \
+					stack_b/algorithm_sb.c \
+					stack_b/algorithm_rb.c \
 					algorithm_p.c \
 					algorithm_sort.c \
 					libft/ft_atoi.c  \

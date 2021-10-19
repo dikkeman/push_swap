@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/11 19:37:12 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/19 20:57:59 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 	}
 	error = check_duplicates(data, argc);
 	if (argc == 4 && error == 0)
-		algorithm3(&stack_a);
+		algorithm3_a(&stack_a);
 	else if (argc <= 6 && argc >= 5 && error == 0)
 		algorithm5(&stack_a, &stack_b, argc - 1);
 	//system("leaks push_swap");

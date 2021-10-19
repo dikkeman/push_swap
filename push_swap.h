@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/11 19:35:32 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/19 21:22:06 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ typedef struct s_node {
 	SORT ALGORITHM
 */
 
-void	algorithm3(t_node **head);
+void	algorithm3_a(t_node **head);
+
+void	algorithm3_b(t_node **head);
 
 void	algorithm5(t_node **stack_a, t_node **stack_b, int argc);
 
@@ -44,6 +46,12 @@ void	action_sa(t_node **head);
 void	action_ra(t_node **head);
 
 void	action_rra(t_node **head);
+
+void	action_sb(t_node **head);
+
+void	action_rb(t_node **head);
+
+void	action_rrb(t_node **head);
 
 void	action_pa(t_node **stack_a, t_node **stack_b);
 

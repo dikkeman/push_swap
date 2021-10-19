@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:45:50 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/11 20:23:15 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/19 21:36:11 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,13 @@ void	action_pb(t_node **stack_a, t_node **stack_b)
 	t_node	*temp;
 
 	data = (*stack_a)->value;
-	new_node(stack_b, data);
+	if (*stack_b == NULL)
+		new_node(stack_b, data);
+	else
+	{
+		new_node(stack_b, (*stack_b)->value);
+		(*stack_b)->value = data;
+	}
 	temp = (*stack_a)->next;
 	*stack_a = temp;
 	print_pb();
