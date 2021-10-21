@@ -6,14 +6,14 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:45:50 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/19 21:36:11 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/21 14:28:00 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-	Carful noet linking it in the wrong way.
+	Careful noet linking it in the wrong way.
 	Stack_a and Stack_b can easily be linked to eachother.
 	The whole algorithm won't work if they are linked to eachother.
 
@@ -54,7 +54,7 @@ void	print_pb(void)
 
 void	action_pb(t_node **stack_a, t_node **stack_b)
 {
-	int 	data;
+	int		data;
 	t_node	*temp;
 
 	data = (*stack_a)->value;

@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 19:45:58 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/19 21:22:21 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/21 14:15:52 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_ra(void)
 void	action_ra(t_node **head)
 {
 	t_node	*temp;
-	
+
 	temp = (*head)->next;
 	new_node(&temp, (*head)->value);
 	*head = temp;

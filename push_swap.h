@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/19 21:22:06 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/21 18:47:23 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ typedef struct s_node {
 	SORT ALGORITHM
 */
 
-void	algorithm3_a(t_node **head);
+void	algorithm_two(t_node **head);
 
-void	algorithm3_b(t_node **head);
+void	algorithm_three_a(t_node **head);
 
-void	algorithm5(t_node **stack_a, t_node **stack_b, int argc);
+void	algorithm_three_b(t_node **head);
+
+void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
 
 /*
 	LIBFT
