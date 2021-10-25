@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/21 18:47:23 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/25 17:34:51 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	algorithm_two(t_node **head)
 	if ((*head)->value > (*head)->next->value)
 		action_sa(head);
 }
+
+/*
+	Use a INT in the function to tell my program what stack it is.
+	Is it stack_a or stack_b?
+*/
 
 void	algorithm_three_a(t_node **head)
 {
@@ -115,4 +120,31 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 		algorithm_three_a(stack_a);
 		i--;
 	}
+}
+
+/*
+	I will need to use Radix Sort, but I will not show it "On screen".
+	It will be done in the background. Make a new list and use the "INT TAGS".
+	Every number will be sorted and get a tag at the end from 0 - MAX OF ARGC.
+	I will bring back every number to its original position with a tag on it.
+	With these tags I will sort in stack_a & stack_b.
+
+	EXAMPLE:
+	VALUE -> 12 11 09 13 06
+	TAGS  -> 03 02 01 04 00
+
+*/
+
+int *tag_sort(t_node **stack_a, int argc)
+{
+	printf("%d & %d", (*stack_a)->value, argc);
+	return (0);
+}
+
+void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
+{
+	int *tags;
+	
+	tags = tag_sort(stack_a, argc);
+	printf("%d & %d", (*stack_b)->value, argc);
 }

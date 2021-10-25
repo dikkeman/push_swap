@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/21 18:52:11 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/25 17:08:26 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,21 @@ int	check_duplicates(int *data, int argc)
 	return (0);
 }
 
+/* Invalid input */
+
 int	check_errors(int *data, int argc)
 {
-	int	error;
-
 	if (argc <= 2)
 	{
-		write(1, "ERROR! Need more inputs", 23);
+		write(1, "ERROR!\n", 8);
 		return (1);
 	}
-	error = check_duplicates(data, argc);
-	if (error == 1)
-		write(1, "ERROR! Duplicate numbers", 24);
-	return (error);
+	if (check_duplicates(data, argc) == 1)
+	{
+		write(1, "ERROR!\n", 8);
+		return (1);
+	}
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -57,7 +59,6 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	i = 1;
-	error = 0;
 	data = malloc(sizeof(int) * (argc - 1));
 	while (i < argc)
 	{
@@ -68,9 +69,11 @@ int	main(int argc, char **argv)
 	error = check_errors(data, argc);
 	if (argc == 3 && error == 0)
 		algorithm_two(&stack_a);
-	if (argc == 4 && error == 0)
+	else if (argc == 4 && error == 0)
 		algorithm_three_a(&stack_a);
 	else if (argc <= 6 && argc >= 5 && error == 0)
 		algorithm_five(&stack_a, &stack_b, argc - 1);
+	else if(argc > 6 && error == 0)
+		algorithm_radix(&stack_a, &stack_b, argc - 1);
 	return (0);
 }
