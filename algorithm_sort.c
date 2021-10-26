@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/25 17:34:51 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/26 16:28:59 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,16 +135,66 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 
 */
 
-int *tag_sort(t_node **stack_a, int argc)
+int	tag_check(t_node *head)
 {
-	printf("%d & %d", (*stack_a)->value, argc);
+	while (head->next != NULL)
+	{
+		if (head->value > head->next->value)
+			return (1);
+		head = head->next;
+	}
 	return (0);
+}
+
+void	pre_sort(t_node **head_a, int argc, int divide)
+{
+	int		i;
+	int 	j;
+	int		result;
+	t_node	*head_b;
+
+	i = 0;
+	j = 0;
+	result = 0;
+	head_b = NULL;
+	while (i <= 9)
+	{
+		while (j <= argc && *head_a != NULL)
+		{
+			result = (*head_a)->value / divide % 10;
+			printf("J: %d I: %d\n", j, i);
+			if (result == i)
+				background_pb(head_a, &head_b);
+			else
+				background_ra(head_a);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	printf("RESULT:\n");
+	print_list(head_b);
+	if (divide <= 100)
+		pre_sort(&head_b, argc, divide * 10);
+}
+
+void	tag_sort(t_node **stack_a, int argc)
+{
+	t_node	*new_list;
+	t_node	*tag_list;
+
+	new_list = *stack_a;
+	tag_list = NULL;
+	while (new_list != NULL)
+	{
+		new_node(&tag_list, new_list->value);
+		new_list = new_list->next;
+	}
+	pre_sort(&tag_list, argc, 1);
 }
 
 void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 {
-	int *tags;
-	
-	tags = tag_sort(stack_a, argc);
-	printf("%d & %d", (*stack_b)->value, argc);
+	tag_sort(stack_a, argc);
+	stack_b = stack_a;
 }

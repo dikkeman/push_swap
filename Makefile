@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/10/21 14:30:11 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/10/26 11:07:39 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS			=	push_swap.c \
 					stack_b/algorithm_sb.c \
 					stack_b/algorithm_rb.c \
 					algorithm_p.c \
+					background_sort.c \
 					algorithm_sort.c \
 					libft/ft_atoi.c  \
 

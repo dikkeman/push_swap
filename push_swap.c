@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/25 17:08:26 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/26 10:36:28 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	check_errors(int *data, int argc)
 int	main(int argc, char **argv)
 {
 	int		i;
-	int		*data;
 	int		error;
+	int		*data;
 	t_node	*stack_a;
 	t_node	*stack_b;
 
@@ -74,6 +74,8 @@ int	main(int argc, char **argv)
 	else if (argc <= 6 && argc >= 5 && error == 0)
 		algorithm_five(&stack_a, &stack_b, argc - 1);
 	else if(argc > 6 && error == 0)
+	{
 		algorithm_radix(&stack_a, &stack_b, argc - 1);
+	}
 	return (0);
 }

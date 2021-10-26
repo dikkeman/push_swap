@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/25 17:21:53 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/26 12:57:34 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ void	action_rrb(t_node **head);
 void	action_pa(t_node **stack_a, t_node **stack_b);
 
 void	action_pb(t_node **stack_a, t_node **stack_b);
+
+void	background_pa(t_node **stack_a, t_node **stack_b);
+
+void	background_pb(t_node **stack_a, t_node **stack_b);
+
+void	background_ra(t_node **head);
 
 /*
 	LISTS
