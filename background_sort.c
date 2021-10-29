@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/26 11:06:09 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/26 13:31:40 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/29 14:58:12 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	background_pb(t_node **stack_a, t_node **stack_b)
 	temp = (*stack_a)->next;
 	*stack_a = temp;
 	printf("A:\n");
-    print_list(*stack_a);
+	print_list(*stack_a);
 	printf("B:\n");
 	print_list(*stack_b);
 }
@@ -58,5 +58,4 @@ void	background_ra(t_node **head)
 	temp = (*head)->next;
 	new_node(&temp, (*head)->value);
 	*head = temp;
-	// print_list(*head);
 }

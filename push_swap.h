@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/26 12:57:34 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/29 15:37:32 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+/*
+	0 = FALSE
+	1 = TRUE
+*/
+
+enum e_boolean
+{
+	FALSE = 0,
+	TRUE = 1
+};
 
 typedef struct s_node {
 	int				value;
@@ -41,6 +52,8 @@ void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
 */
 
 int		ft_atoi(const char *str);
+
+int		ft_isdigit(int input);
 
 /*
 	PUSH SWAP
@@ -77,5 +90,7 @@ void	print_list(t_node *head);
 void	new_node(t_node **head, int number);
 
 void	free_list(t_node *head);
+
+int		sorting_check(t_node *head);
 
 #endif

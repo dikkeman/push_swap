@@ -6,11 +6,22 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/21 14:41:09 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/10/29 15:37:07 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	sorting_check(t_node *head)
+{
+	while (head->next != NULL)
+	{
+		if (head->value > head->next->value)
+			return (TRUE);
+		head = head->next;
+	}
+	return (FALSE);
+}
 
 void	free_list(t_node *head)
 {
