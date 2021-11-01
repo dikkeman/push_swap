@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/29 15:37:32 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/01 15:07:21 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void	background_pa(t_node **stack_a, t_node **stack_b);
 void	background_pb(t_node **stack_a, t_node **stack_b);
 
 void	background_ra(t_node **head);
+
+void	background_rra(t_node **head);
 
 /*
 	LISTS

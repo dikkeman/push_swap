@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/29 15:15:37 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/01 15:22:01 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,38 @@
 	EXAMPLE:
 	VALUE -> 12 11 09 13 06
 	TAGS  -> 03 02 01 04 00
-
 */
 
-void	pre_sort(t_node **head_a, int argc, int divide)
+int	find_max(t_node *head)
+{
+	int	max;
+
+	max = head->value;
+	while (head !=  NULL)
+	{
+		if (head->value > max)
+			max = head->value;
+		head = head->next;
+	}
+	return (max);
+}
+
+void	pre_sort(t_node **head_a, int argc, int divide, int max_pass)
 {
 	int		i;
 	int		j;
 	int		result;
 	t_node	*head_b;
 
-	i = 0;
+	i = 9;
 	j = 0;
 	result = 0;
 	head_b = NULL;
-	while (i <= 9)
+	while (i >= 0)
 	{
-		while (j <= argc && *head_a != NULL)
+		while (j < argc && *head_a != NULL)
 		{
-			result = (*head_a)->value / divide % 10;
+			result = ((*head_a)->value / divide) % 10;
 			printf("J: %d I: %d\n", j, i);
 			if (result == i)
 				background_pb(head_a, &head_b);
@@ -49,27 +62,36 @@ void	pre_sort(t_node **head_a, int argc, int divide)
 			j++;
 		}
 		j = 0;
-		i++;
+		i--;
 	}
 	printf("RESULT:\n");
 	print_list(head_b);
-	if (divide <= 100)
-		pre_sort(&head_b, argc, divide * 10);
+	if (max_pass > 0 && sorting_check(head_b) == TRUE)
+		pre_sort(&head_b, argc, divide * 10, max_pass - 1);
 }
 
 void	tag_sort(t_node **stack_a, int argc)
 {
+	int		max;
+	int		max_pass;
 	t_node	*new_list;
 	t_node	*tag_list;
 
 	new_list = *stack_a;
+	max_pass = 0;
 	tag_list = NULL;
+	max = find_max(*stack_a);
+	while (max != 0)
+	{
+		max = max / 10;
+		max_pass++;
+	}
 	while (new_list != NULL)
 	{
 		new_node(&tag_list, new_list->value);
 		new_list = new_list->next;
 	}
-	pre_sort(&tag_list, argc, 1);
+	pre_sort(&tag_list, argc, 1, max_pass - 1);
 }
 
 void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)

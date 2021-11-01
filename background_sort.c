@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/26 11:06:09 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/29 14:58:12 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/01 15:07:08 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,28 @@ void	background_ra(t_node **head)
 
 	temp = (*head)->next;
 	new_node(&temp, (*head)->value);
+	*head = temp;
+}
+
+void	background_rra(t_node **head)
+{
+	t_node	*last;
+	t_node	*temp;
+	int		i;
+
+	last = *head;
+	i = 0;
+	while (last->next != NULL)
+	{
+		last = last->next;
+		i++;
+	}
+	temp = last;
+	while (i > 0)
+	{
+		new_node(&temp, (*head)->value);
+		*head = (*head)->next;
+		i--;
+	}
 	*head = temp;
 }
