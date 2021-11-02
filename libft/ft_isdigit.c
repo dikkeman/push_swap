@@ -6,13 +6,13 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 15:30:38 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/01 11:00:18 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/02 14:00:16 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int input)
 {
 	if (input < '0' || input > '9')
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }

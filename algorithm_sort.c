@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/29 15:20:07 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/02 15:16:39 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,6 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 		algorithm_three_a(stack_a);
 		i--;
 	}
-	if (sorting_check(*stack_a) == TRUE)
+	if (ft_issorted(*stack_a) == false)
 		algorithm_five(stack_a, stack_b, argc);
 }

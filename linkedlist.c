@@ -6,21 +6,21 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/29 15:37:07 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/02 16:16:35 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sorting_check(t_node *head)
+int	ft_issorted(t_node *head)
 {
 	while (head->next != NULL)
 	{
 		if (head->value > head->next->value)
-			return (TRUE);
+			return (false);
 		head = head->next;
 	}
-	return (FALSE);
+	return (true);
 }
 
 void	free_list(t_node *head)
@@ -35,6 +35,18 @@ void	free_list(t_node *head)
 	}
 }
 
+void	print_tag(t_node *head)
+{
+	printf("TAGS:\n");
+	while (head != NULL)
+	{
+		printf("%d -> ", head->tag);
+		head = head->next;
+	}
+	printf("NULL\n");
+	write(1, "\n", 2);
+}
+
 void	print_list(t_node *head)
 {
 	printf("\n");
@@ -45,6 +57,26 @@ void	print_list(t_node *head)
 	}
 	printf("NULL\n");
 	write(1, "\n", 2);
+}
+
+void	add_tag(t_node **head, int value, int tag)
+{
+	t_node	*new_node;
+	t_node	*last_node;
+
+	new_node = malloc(sizeof(t_node));
+	last_node = *head;
+	new_node->value = value;
+	new_node->tag = tag;
+	new_node->next = NULL;
+	if (*head == NULL)
+		*head = new_node;
+	else
+	{
+		while (last_node->next != NULL)
+			last_node = last_node->next;
+		last_node->next = new_node;
+	}
 }
 
 void	new_node(t_node **head, int number)

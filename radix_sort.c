@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/01 15:22:01 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/02 16:28:23 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,39 @@ int	find_max(t_node *head)
 	int	max;
 
 	max = head->value;
-	while (head !=  NULL)
+	while (head != NULL)
 	{
 		if (head->value > max)
 			max = head->value;
 		head = head->next;
 	}
 	return (max);
+}
+
+void	reorder_tags(t_node **stack_a, t_node *tag_list)
+{
+	while (tag_list->value != (*stack_a)->value)
+	{
+		tag_list = tag_list->next;
+		if (tag_list->value == (*stack_a)->value)
+			(*stack_a)->tag = tag_list->tag;
+	}
+}
+
+void	place_tags(t_node **tag_list, int argc)
+{
+	int		tag;
+	t_node	*new_list;
+
+	tag = 1;
+	new_list = NULL;
+	while (tag < argc)
+	{
+		add_tag(&new_list, (*tag_list)->value, tag);
+		*tag_list = (*tag_list)->next;
+		tag++;
+	}
+	*tag_list = new_list;
 }
 
 void	pre_sort(t_node **head_a, int argc, int divide, int max_pass)
@@ -45,16 +71,15 @@ void	pre_sort(t_node **head_a, int argc, int divide, int max_pass)
 	int		result;
 	t_node	*head_b;
 
-	i = 9;
+	i = -9;
 	j = 0;
 	result = 0;
 	head_b = NULL;
-	while (i >= 0)
+	while (i <= 9)
 	{
 		while (j < argc && *head_a != NULL)
 		{
 			result = ((*head_a)->value / divide) % 10;
-			printf("J: %d I: %d\n", j, i);
 			if (result == i)
 				background_pb(head_a, &head_b);
 			else
@@ -62,12 +87,11 @@ void	pre_sort(t_node **head_a, int argc, int divide, int max_pass)
 			j++;
 		}
 		j = 0;
-		i--;
+		i++;
 	}
-	printf("RESULT:\n");
-	print_list(head_b);
-	if (max_pass > 0 && sorting_check(head_b) == TRUE)
+	if (max_pass > 0 && ft_issorted(head_b) == false)
 		pre_sort(&head_b, argc, divide * 10, max_pass - 1);
+	*head_a = head_b;
 }
 
 void	tag_sort(t_node **stack_a, int argc)
@@ -77,9 +101,9 @@ void	tag_sort(t_node **stack_a, int argc)
 	t_node	*new_list;
 	t_node	*tag_list;
 
-	new_list = *stack_a;
 	max_pass = 0;
 	tag_list = NULL;
+	new_list = *stack_a;
 	max = find_max(*stack_a);
 	while (max != 0)
 	{
@@ -92,6 +116,11 @@ void	tag_sort(t_node **stack_a, int argc)
 		new_list = new_list->next;
 	}
 	pre_sort(&tag_list, argc, 1, max_pass - 1);
+	place_tags(&tag_list, argc);
+	reorder_tags(stack_a, tag_list);
+	printf("RESULT:\n");
+	print_list(tag_list);
+	print_tag(*stack_a);
 }
 
 void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)

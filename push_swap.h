@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/01 15:07:21 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/02 15:45:42 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 /*
-	0 = FALSE
-	1 = TRUE
+	0 = false
+	1 = true
 */
-
-enum e_boolean
-{
-	FALSE = 0,
-	TRUE = 1
-};
 
 typedef struct s_node {
 	int				value;
@@ -93,6 +88,10 @@ void	new_node(t_node **head, int number);
 
 void	free_list(t_node *head);
 
-int		sorting_check(t_node *head);
+int		ft_issorted(t_node *head);
+
+void	add_tag(t_node **head, int value, int tag);
+
+void	print_tag(t_node *head);
 
 #endif
