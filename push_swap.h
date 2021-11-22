@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/02 15:45:42 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/22 20:16:04 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ typedef struct s_node {
 	int				tag;
 	struct s_node	*next;
 }					t_node;
+
+typedef struct s_tree {
+	t_node			*list;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}					t_tree;
 
 /*
 	SORT ALGORITHM
@@ -66,18 +72,6 @@ void	action_rb(t_node **head);
 
 void	action_rrb(t_node **head);
 
-void	action_pa(t_node **stack_a, t_node **stack_b);
-
-void	action_pb(t_node **stack_a, t_node **stack_b);
-
-void	background_pa(t_node **stack_a, t_node **stack_b);
-
-void	background_pb(t_node **stack_a, t_node **stack_b);
-
-void	background_ra(t_node **head);
-
-void	background_rra(t_node **head);
-
 /*
 	LISTS
 */
@@ -93,5 +87,7 @@ int		ft_issorted(t_node *head);
 void	add_tag(t_node **head, int value, int tag);
 
 void	print_tag(t_node *head);
+
+void	copy_list(t_node **head, t_node *copy);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/02 16:16:35 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/22 19:42:03 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,15 @@ void	add_tag(t_node **head, int value, int tag)
 		while (last_node->next != NULL)
 			last_node = last_node->next;
 		last_node->next = new_node;
+	}
+}
+
+void	copy_list(t_node **head, t_node *copy)
+{
+	while (copy != NULL)
+	{
+		new_node(head, copy->value);
+		copy = copy->next;
 	}
 }
 
