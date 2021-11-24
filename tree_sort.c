@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   radix_sort.c                                       :+:    :+:            */
+/*   tree_sort.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/22 20:14:08 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 14:23:43 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	insert_branch(t_tree *head, t_node *stack, int left_true)
 
 void	make_branch(t_tree *head, t_node *stack)
 {
-	/* To the left */
 	if (head->list->value > stack->value)
 	{
 		if (head->left == NULL)
@@ -60,7 +59,6 @@ void	make_branch(t_tree *head, t_node *stack)
 		else
 			make_branch(head->left, stack);
 	}
-	/* To the right */
 	else if (head->list->value < stack->value)
 	{
 		if (head->right == NULL)
