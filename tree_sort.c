@@ -13,11 +13,22 @@
 #include "push_swap.h"
 
 /*
-	I will need to use Radix Sort, but I will not show it "On screen".
-	It will be done in the background. Make a new list and use the "INT TAGS".
-	Every number will be sorted and get a tag at the end from 0 - MAX OF ARGC.
-	I will bring back every number to its original position with a tag on it.
-	With these tags I will sort in stack_a & stack_b.
+	I will use the Tree Sort.
+	The tree sort will start with a "Root Number".
+	This root number will be the start of your tree.
+	If the number is lower than the root,
+	it will go to the left, else to the right. After you sorted every number,
+	you will go to the most left number. The most leftish number is the smallest.
+	And the rightest is the highest.
+
+	Here you can see an example:
+
+			15
+		11		20
+	10		13		23
+
+	You will place in order all the tags.
+	The lowest getting the first tag and the highest getting the last tag.
 
 	EXAMPLE:
 	VALUE -> 12 11 09 13 06
