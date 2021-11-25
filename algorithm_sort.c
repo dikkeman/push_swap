@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/02 15:16:39 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/25 15:22:36 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,18 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 	}
 	if (ft_issorted(*stack_a) == false)
 		algorithm_five(stack_a, stack_b, argc);
+}
+
+/*
+	The Radix sort won't be too difficult. I will pre sort with a tree system.
+	Then I tag all numbers and sort it from lowest to highest.
+
+	Treesort is the "pre-sort"
+	main_sort is waar het allemaal om draait.
+*/
+
+void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
+{
+	tree_sort(stack_a);
+	main_sort(stack_a, stack_b, argc, 1);
 }

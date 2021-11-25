@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/22 19:42:03 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/25 15:07:21 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	print_tag(t_node *head)
 		head = head->next;
 	}
 	printf("NULL\n");
-	write(1, "\n", 2);
+	write(1, "\n", 1);
 }
 
 void	print_list(t_node *head)
@@ -56,7 +56,7 @@ void	print_list(t_node *head)
 		head = head->next;
 	}
 	printf("NULL\n");
-	write(1, "\n", 2);
+	write(1, "\n", 1);
 }
 
 void	add_tag(t_node **head, int value, int tag)
@@ -105,4 +105,5 @@ void	new_node(t_node **head, int number)
 			last_node = last_node->next;
 		last_node->next = new_node;
 	}
+	free(new_node);
 }

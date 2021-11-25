@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
+/*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/20 17:28:04 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/09/20 17:33:59 by xvoorvaa      ########   odam.nl         */
+/*   Created: 2020/11/20 14:54:49 by xvoorvaa      #+#    #+#                 */
+/*   Updated: 2021/11/25 14:56:49 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	answer = 0;
 	negative = 1;
-	while (str[i] && (str[i] == '\f' || str[i] == '\r' || str[i] == ' '
-			|| str[i] == '\t' || str[i] == '\v' || str[i] == '\n'))
+	while (str[i] && str[i] < 33)
 		i++;
 	if (str[i] == '\e' || ((str[i] < '0' || str[i] > '9')
 			&& (str[i] != '+' && str[i] != '-')))

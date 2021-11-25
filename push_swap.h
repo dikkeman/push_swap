@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/24 14:24:14 by xander        ########   odam.nl         */
+/*   Updated: 2021/11/25 14:55:36 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ void	add_tag(t_node **head, int value, int tag);
 void	print_tag(t_node *head);
 
 void	copy_list(t_node **head, t_node *copy);
+
+void	tree_sort(t_node **stack_a);
 
 #endif

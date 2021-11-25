@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:45:50 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/22 12:37:26 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/25 14:54:01 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 void	print_pa(void)
 {
 	write(1, "pa", 2);
-	write(1, "\n", 2);
+	write(1, "\n", 1);
 }
 
 void	action_pa(t_node **stack_a, t_node **stack_b)
@@ -49,7 +49,7 @@ void	action_pa(t_node **stack_a, t_node **stack_b)
 void	print_pb(void)
 {
 	write(1, "pb", 2);
-	write(1, "\n", 2);
+	write(1, "\n", 1);
 }
 
 void	action_pb(t_node **stack_a, t_node **stack_b)

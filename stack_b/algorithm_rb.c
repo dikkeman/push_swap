@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 19:45:58 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/10/21 14:16:09 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/25 14:54:01 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_rb(void)
 {
 	write(1, "rb", 2);
-	write(1, "\n", 2);
+	write(1, "\n", 1);
 }
 
 void	action_rb(t_node **head)
@@ -32,7 +32,7 @@ void	action_rb(t_node **head)
 void	print_rrb(void)
 {
 	write(1, "rrb", 3);
-	write(1, "\n", 2);
+	write(1, "\n", 1);
 }
 
 void	action_rrb(t_node **head)

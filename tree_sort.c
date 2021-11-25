@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/24 14:23:43 by xander        ########   odam.nl         */
+/*   Updated: 2021/11/25 14:55:05 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,4 @@ void	tree_sort(t_node **stack_a)
 	}
 	index_values(root, &tag);
 	*stack_a = root->list;
-}
-
-void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
-{
-	tree_sort(stack_a);
-	printf("SKIP: %d", argc);
-	print_list(*stack_a);
-	print_tag(*stack_a);
-	stack_b = stack_a;
 }
