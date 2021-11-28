@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/25 14:55:36 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/28 17:24:36 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
 
 void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
 
+void	insert_sort(t_node **stack_a, t_node **stack_b, int argc);
+
 /*
 	LIBFT
 */
@@ -75,7 +77,7 @@ void	action_rrb(t_node **head);
 void	action_pa(t_node **stack_a, t_node **stack_b);
 
 void	action_pb(t_node **stack_a, t_node **stack_b);
-;
+
 /*
 	LISTS
 */

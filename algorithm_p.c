@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:45:50 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/25 14:54:01 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/28 17:11:30 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	action_pa(t_node **stack_a, t_node **stack_b)
 	temp = (*stack_b)->next;
 	(*stack_b) = temp;
 	print_pa();
-	print_list(*stack_a);
 }
 
 void	print_pb(void)
@@ -56,17 +55,15 @@ void	action_pb(t_node **stack_a, t_node **stack_b)
 {
 	int		data;
 	t_node	*temp;
+	t_node	*new_list;
 
+	new_list = malloc(sizeof(t_node));
 	data = (*stack_a)->value;
-	if (*stack_b == NULL)
-		new_node(stack_b, data);
-	else
-	{
-		new_node(stack_b, (*stack_b)->value);
-		(*stack_b)->value = data;
-	}
 	temp = (*stack_a)->next;
-	*stack_a = temp;
+	new_list->value = data;
+	new_list->next = *stack_b;
+	*stack_b = new_list;
+	temp = (*stack_a)->next;
+	(*stack_a) = temp;
 	print_pb();
-	print_list(*stack_b);
 }

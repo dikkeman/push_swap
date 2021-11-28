@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/25 15:22:36 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/28 17:24:47 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,5 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 {
 	tree_sort(stack_a);
-	main_sort(stack_a, stack_b, argc, 1);
+	insert_sort(stack_a, stack_b, argc);
 }

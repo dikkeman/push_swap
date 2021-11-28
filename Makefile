@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/11/22 20:15:55 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/11/28 16:17:26 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS			=	push_swap.c \
 					algorithm_sort.c \
 					libft/ft_atoi.c  \
 					libft/ft_isdigit.c \
+					big_sort.c \
 
 GREEN			=	\033[1;32m
 BLUE			=	\033[1;36m

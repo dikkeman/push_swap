@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/25 15:07:21 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/28 17:23:47 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,4 @@ void	new_node(t_node **head, int number)
 			last_node = last_node->next;
 		last_node->next = new_node;
 	}
-	free(new_node);
 }
