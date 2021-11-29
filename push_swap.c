@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/28 17:12:40 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/29 14:40:36 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,17 @@ int	check_errors(int *data, int argc, char **argv)
 {
 	if (argc <= 2)
 	{
-		write(1, "Error\n", 7);
+		write(1, "Error\n", 6);
 		return (1);
 	}
 	if (check_duplicates(data, argc) == true)
 	{
-		write(1, "Error\n", 7);
+		write(1, "Error\n", 6);
 		return (1);
 	}
 	if (check_nonvalid(argc, argv) == true)
 	{
-		write(1, "Error\n", 7);
+		write(1, "Error\n", 6);
 		return (1);
 	}
 	return (0);
