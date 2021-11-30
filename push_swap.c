@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/29 14:40:36 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/30 20:40:22 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,12 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	i = 1;
-	data = malloc(sizeof(int) * (argc - 1));
+	data = ft_calloc(sizeof(int) * (argc - 1), 1);
+	if (!data)
+		return (-1);
 	while (i < argc)
 	{
-		new_node(&stack_a, ft_atoi(argv[i]));
+		new_node(&stack_a, ft_atoi(argv[i]), 0);
 		data[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
@@ -107,5 +109,6 @@ int	main(int argc, char **argv)
 		algorithm_five(&stack_a, &stack_b, argc - 1);
 	else if (argc > 6 && error == false)
 		algorithm_radix(&stack_a, &stack_b, argc - 1);
+	system("leaks push_swap");
 	return (0);
 }

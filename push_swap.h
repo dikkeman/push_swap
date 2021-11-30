@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/29 13:39:51 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/30 20:46:49 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,16 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
 
 void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
 
-void	insert_sort(t_node **stack_a, t_node **stack_b, int argc, int divide);
+void	radix_sort_a(t_node **stack_a, t_node **stack_b \
+			, int max_numbers, int divide);
+
+void	radix_sort_b(t_node **stack_a, t_node **stack_b \
+			, int max_numbers, int divide);
+
+void	maxpass_loop(t_node **stack_a, t_node **stack_b \
+			, int argc, int max_pass);
+
+int		find_maxdivide(t_node *head);
 
 /*
 	LIBFT
@@ -57,6 +66,10 @@ void	insert_sort(t_node **stack_a, t_node **stack_b, int argc, int divide);
 int		ft_atoi(const char *str);
 
 int		ft_isdigit(int input);
+
+void	*ft_calloc(size_t nitems, size_t n);
+
+void	ft_bzero(void *str, size_t n);
 
 /*
 	PUSH SWAP
@@ -84,13 +97,11 @@ void	action_pb(t_node **stack_a, t_node **stack_b);
 
 void	print_list(t_node *head);
 
-void	new_node(t_node **head, int number);
+void	new_node(t_node **head, int number, int tag);
 
 void	free_list(t_node *head);
 
 int		ft_issorted(t_node *head);
-
-void	add_tag(t_node **head, int value, int tag);
 
 void	print_tag(t_node *head);
 

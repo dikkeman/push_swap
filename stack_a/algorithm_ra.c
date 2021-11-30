@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 19:45:58 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/28 17:11:37 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/30 14:37:53 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	action_ra(t_node **head)
 	t_node	*temp;
 
 	temp = (*head)->next;
-	add_tag(&temp, (*head)->value, (*head)->tag);
+	new_node(&temp, (*head)->value, (*head)->tag);
 	*head = temp;
 	print_ra();
 }
@@ -50,7 +50,7 @@ void	action_rra(t_node **head)
 	temp = last;
 	while (i > 0)
 	{
-		new_node(&temp, (*head)->value);
+		new_node(&temp, (*head)->value, (*head)->tag);
 		*head = (*head)->next;
 		i--;
 	}

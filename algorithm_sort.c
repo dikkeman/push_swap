@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/29 14:02:19 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/30 17:38:22 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,26 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 	Then I tag all numbers and sort it from lowest to highest.
 
 	Treesort is the "pre-sort"
-	main_sort is waar het allemaal om draait.
+	radix_sort is waar het allemaal om draait.
 */
 
 void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 {
+	int	i;
+	int	max_pass;
+	int	max_numbers;
+
+	i = argc;
+	max_numbers = argc;
 	tree_sort(stack_a);
-	insert_sort(stack_a, stack_b, argc, 1);
+	max_pass = find_maxdivide(*stack_a);
+	maxpass_loop(stack_a, stack_b, max_numbers, max_pass);
+	if (*stack_a == NULL)
+	{
+		while (i > 0)
+		{
+			action_pa(stack_a, stack_b);
+			i--;
+		}
+	}
 }

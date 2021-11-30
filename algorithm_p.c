@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/09 23:45:50 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/29 13:43:08 by xvoorvaa      ########   odam.nl         */
+/*   Created: 2021/11/30 17:16:54 by xvoorvaa      #+#    #+#                 */
+/*   Updated: 2021/11/30 20:30:53 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 	action_pb() is the first time I will use it.
 	That is why I use new_node for the first time
-	and using malloc() there.
+	and using ft_calloc() there.
 */
 
 void	print_pa(void)
@@ -35,7 +35,7 @@ void	action_pa(t_node **stack_a, t_node **stack_b)
 	t_node	*temp;
 	t_node	*new_list;
 
-	new_list = malloc(sizeof(t_node));
+	new_list = ft_calloc(sizeof(t_node), 1);
 	value = (*stack_b)->value;
 	tag = (*stack_b)->tag;
 	temp = (*stack_b)->next;
@@ -61,7 +61,7 @@ void	action_pb(t_node **stack_a, t_node **stack_b)
 	t_node	*temp;
 	t_node	*new_list;
 
-	new_list = malloc(sizeof(t_node));
+	new_list = ft_calloc(sizeof(t_node), 1);
 	value = (*stack_a)->value;
 	tag = (*stack_a)->tag;
 	temp = (*stack_a)->next;

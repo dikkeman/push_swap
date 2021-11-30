@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/28 16:30:35 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/30 20:31:20 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	insert_branch(t_tree *head, t_node *stack, int left_true)
 {
 	t_tree	*new_branch;
 
-	new_branch = malloc(sizeof(t_tree));
+	new_branch = ft_calloc(sizeof(t_tree), 1);
 	new_branch->list = stack;
 	new_branch->left = NULL;
 	new_branch->right = NULL;
@@ -86,7 +86,7 @@ void	tree_sort(t_node **stack_a)
 	t_node	*main_list;
 
 	tag = 0;
-	root = malloc(sizeof(t_tree));
+	root = ft_calloc(sizeof(t_tree), 1);
 	main_list = NULL;
 	copy_list(&main_list, *stack_a);
 	root->list = main_list;
