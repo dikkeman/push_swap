@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 17:16:54 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/30 20:30:53 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/01 14:34:57 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,20 @@ void	print_pa(void)
 
 void	action_pa(t_node **stack_a, t_node **stack_b)
 {
-	int		value;
-	int		tag;
 	t_node	*temp;
-	t_node	*new_list;
 
-	new_list = ft_calloc(sizeof(t_node), 1);
-	value = (*stack_b)->value;
-	tag = (*stack_b)->tag;
-	temp = (*stack_b)->next;
-	new_list->value = value;
-	new_list->tag = tag;
-	new_list->next = *stack_a;
-	*stack_a = new_list;
-	temp = (*stack_b)->next;
-	(*stack_b) = temp;
+	temp = (*stack_b);
+	*stack_b = (*stack_b)->next;
+	if (*stack_a == NULL)
+	{
+		temp->next = NULL;
+		*stack_a = temp;
+	}
+	else
+	{
+		temp->next = *stack_a;
+		*stack_a = temp;
+	}
 	print_pa();
 }
 
@@ -56,20 +55,19 @@ void	print_pb(void)
 
 void	action_pb(t_node **stack_a, t_node **stack_b)
 {
-	int		value;
-	int		tag;
 	t_node	*temp;
-	t_node	*new_list;
 
-	new_list = ft_calloc(sizeof(t_node), 1);
-	value = (*stack_a)->value;
-	tag = (*stack_a)->tag;
-	temp = (*stack_a)->next;
-	new_list->value = value;
-	new_list->tag = tag;
-	new_list->next = *stack_b;
-	*stack_b = new_list;
-	temp = (*stack_a)->next;
-	(*stack_a) = temp;
+	temp = (*stack_a);
+	*stack_a = (*stack_a)->next;
+	if (*stack_b == NULL)
+	{
+		temp->next = NULL;
+		*stack_b = temp;
+	}
+	else
+	{
+		temp->next = *stack_b;
+		*stack_b = temp;
+	}
 	print_pb();
 }

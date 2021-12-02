@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/30 20:46:49 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 12:05:48 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	algorithm_three_b(t_node **head);
 
 void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
 
-void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
+int		algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
 
 void	radix_sort_a(t_node **stack_a, t_node **stack_b \
 			, int max_numbers, int divide);
@@ -99,14 +99,10 @@ void	print_list(t_node *head);
 
 void	new_node(t_node **head, int number, int tag);
 
-void	free_list(t_node *head);
-
 int		ft_issorted(t_node *head);
 
 void	print_tag(t_node *head);
 
-void	copy_list(t_node **head, t_node *copy);
-
-void	tree_sort(t_node **stack_a);
+int		tree_sort(t_node **stack_a);
 
 #endif

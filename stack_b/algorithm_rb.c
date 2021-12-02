@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 19:45:58 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/30 14:38:18 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/01 14:51:24 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,16 @@ void	print_rb(void)
 
 void	action_rb(t_node **head)
 {
-	t_node	*temp;
+	t_node	*last;
+	t_node	*first;
 
-	temp = (*head)->next;
-	new_node(&temp, (*head)->value, (*head)->tag);
-	*head = temp;
+	last = *head;
+	first = *head;
+	while (last->next != NULL)
+		last = last->next;
+	*head = first->next;
+	first->next = NULL;
+	last->next = first;
 	print_rb();
 }
 
@@ -36,24 +41,15 @@ void	print_rrb(void)
 
 void	action_rrb(t_node **head)
 {
-	t_node	*last;
 	t_node	*temp;
-	int		i;
+	t_node	*second_last;
 
-	last = *head;
-	i = 0;
-	while (last->next != NULL)
-	{
-		last = last->next;
-		i++;
-	}
-	temp = last;
-	while (i > 0)
-	{
-		new_node(&temp, (*head)->value, (*head)->tag);
-		*head = (*head)->next;
-		i--;
-	}
+	second_last = *head;
+	while (second_last->next->next != NULL)
+		second_last = second_last->next;
+	temp = second_last->next;
+	second_last->next = NULL;
+	temp->next = *head;
 	*head = temp;
 	print_rrb();
 }

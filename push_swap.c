@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/30 20:40:22 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 11:50:35 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,22 @@ int	check_errors(int *data, int argc, char **argv)
 	return (0);
 }
 
+int	algorithm_check(t_node **stack_a, t_node **stack_b, int argc)
+{
+	int	malloc_check;
+
+	malloc_check = 0;
+	if (argc == 3)
+		algorithm_two(stack_a);
+	else if (argc == 4)
+		algorithm_three_a(stack_a);
+	else if (argc <= 6 && argc >= 5)
+		algorithm_five(stack_a, stack_b, argc - 1);
+	else if (argc > 6)
+		malloc_check = algorithm_radix(stack_a, stack_b, argc - 1);
+	return (malloc_check);
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -91,6 +107,7 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	i = 1;
+	error = 0;
 	data = ft_calloc(sizeof(int) * (argc - 1), 1);
 	if (!data)
 		return (-1);
@@ -100,15 +117,9 @@ int	main(int argc, char **argv)
 		data[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
-	error = check_errors(data, argc, argv);
-	if (argc == 3 && error == false)
-		algorithm_two(&stack_a);
-	else if (argc == 4 && error == false)
-		algorithm_three_a(&stack_a);
-	else if (argc <= 6 && argc >= 5 && error == false)
-		algorithm_five(&stack_a, &stack_b, argc - 1);
-	else if (argc > 6 && error == false)
-		algorithm_radix(&stack_a, &stack_b, argc - 1);
-	system("leaks push_swap");
+	if (check_errors(data, argc, argv) == 0)
+		error = algorithm_check(&stack_a, &stack_b, argc);
+	if (error == -1)
+		return (-1);
 	return (0);
 }

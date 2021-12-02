@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/30 20:46:43 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 12:05:51 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,6 @@ int	ft_issorted(t_node *head)
 		head = head->next;
 	}
 	return (true);
-}
-
-void	free_list(t_node *head)
-{
-	t_node	*temp;
-
-	while (head != NULL)
-	{
-		temp = head;
-		head = head->next;
-		free(temp);
-	}
 }
 
 void	print_tag(t_node *head)
@@ -59,21 +47,14 @@ void	print_list(t_node *head)
 	write(1, "\n", 1);
 }
 
-void	copy_list(t_node **head, t_node *copy)
-{
-	while (copy != NULL)
-	{
-		new_node(head, copy->value, copy->tag);
-		copy = copy->next;
-	}
-}
-
 void	new_node(t_node **head, int value, int tag)
 {
 	t_node	*new_node;
 	t_node	*last_node;
 
 	new_node = ft_calloc(sizeof(t_node), 1);
+	if (!new_node)
+		return ;
 	last_node = *head;
 	new_node->value = value;
 	new_node->tag = tag;

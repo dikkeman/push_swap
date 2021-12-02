@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/30 17:38:22 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/01 16:35:40 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,22 +112,28 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 }
 
 /*
+	ALGORITHM MAX
+	---
+
 	The Radix sort won't be too difficult. I will pre sort with a tree system.
 	Then I tag all numbers and sort it from lowest to highest.
 
-	Treesort is the "pre-sort"
-	radix_sort is waar het allemaal om draait.
+	Treesort is the "pre-sort".
+	Radix_sort is waar het allemaal om draait.
 */
 
-void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
+int	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 {
 	int	i;
 	int	max_pass;
 	int	max_numbers;
+	int	malloc_protect;
 
 	i = argc;
 	max_numbers = argc;
-	tree_sort(stack_a);
+	malloc_protect = tree_sort(stack_a);
+	if (malloc_protect == -1)
+		return (-1);
 	max_pass = find_maxdivide(*stack_a);
 	maxpass_loop(stack_a, stack_b, max_numbers, max_pass);
 	if (*stack_a == NULL)
@@ -138,4 +144,5 @@ void	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 			i--;
 		}
 	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/30 20:31:20 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 11:34:50 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,13 @@ void	index_values(t_tree *head, int *tag)
 	}
 }
 
-void	insert_branch(t_tree *head, t_node *stack, int left_true)
+int	insert_branch(t_tree *head, t_node *stack, int left_true)
 {
 	t_tree	*new_branch;
 
 	new_branch = ft_calloc(sizeof(t_tree), 1);
+	if (!new_branch)
+		return (-1);
 	new_branch->list = stack;
 	new_branch->left = NULL;
 	new_branch->right = NULL;
@@ -59,44 +61,54 @@ void	insert_branch(t_tree *head, t_node *stack, int left_true)
 		head->left = new_branch;
 	else
 		head->right = new_branch;
+	return (0);
 }
 
-void	make_branch(t_tree *head, t_node *stack)
+int	make_branch(t_tree *head, t_node *stack)
 {
+	int	malloc_protect;
+
+	malloc_protect = 0;
 	if (head->list->value > stack->value)
 	{
 		if (head->left == NULL)
-			insert_branch(head, stack, true);
+			malloc_protect = insert_branch(head, stack, true);
 		else
 			make_branch(head->left, stack);
 	}
 	else if (head->list->value < stack->value)
 	{
 		if (head->right == NULL)
-			insert_branch(head, stack, false);
+			malloc_protect = insert_branch(head, stack, false);
 		else
 			make_branch(head->right, stack);
 	}
+	return (malloc_protect);
 }
 
-void	tree_sort(t_node **stack_a)
+int	tree_sort(t_node **stack_a)
 {
 	int		tag;
+	int		malloc_protect;
 	t_tree	*root;
 	t_node	*main_list;
 
 	tag = 0;
 	root = ft_calloc(sizeof(t_tree), 1);
-	main_list = NULL;
-	copy_list(&main_list, *stack_a);
+	if (!root)
+		return (-1);
+	main_list = *stack_a;
 	root->list = main_list;
 	root->left = NULL;
 	root->right = NULL;
 	while (main_list->next != NULL)
 	{
 		main_list = main_list->next;
-		make_branch(root, main_list);
+		malloc_protect = make_branch(root, main_list);
+		if (malloc_protect == -1)
+			return (-1);
 	}
 	index_values(root, &tag);
 	*stack_a = root->list;
+	return (0);
 }
