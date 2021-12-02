@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/11/30 20:29:28 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/02 13:54:25 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,19 +15,20 @@ CFLAGS			=	-Wall -Werror -Wextra
 LEAKS			=	-g3 -fsanitize=address
 OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
-					linkedlist.c \
-					stack_a/algorithm_sa.c \
-					stack_a/algorithm_ra.c \
-					stack_b/algorithm_sb.c \
-					stack_b/algorithm_rb.c \
-					tree_sort.c \
-					algorithm_p.c \
-					algorithm_sort.c \
-					big_sort.c \
-					libft/ft_atoi.c  \
-					libft/ft_isdigit.c \
-					libft/ft_calloc.c \
-					libft/ft_bzero.c \
+					SRC/linkedlist.c \
+					SRC/stack_a/algorithm_sa.c \
+					SRC/stack_a/algorithm_ra.c \
+					SRC/stack_b/algorithm_sb.c \
+					SRC/stack_b/algorithm_rb.c \
+					SRC/tree_sort.c \
+					SRC/algorithm_p.c \
+					SRC/algorithm_sort.c \
+					SRC/big_sort.c \
+					SRC/find_num.c \
+					SRC/libft/ft_atoi.c  \
+					SRC/libft/ft_isdigit.c \
+					SRC/libft/ft_calloc.c \
+					SRC/libft/ft_bzero.c \
 
 GREEN			=	\033[1;32m
 BLUE			=	\033[1;36m

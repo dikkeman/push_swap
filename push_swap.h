@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/15 14:19:41 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 12:05:48 by xvoorvaa      ########   odam.nl         */
+/*   Created: 2021/12/02 13:55:49 by xvoorvaa      #+#    #+#                 */
+/*   Updated: 2021/12/02 13:55:49 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	algorithm_three_a(t_node **head);
 
 void	algorithm_three_b(t_node **head);
 
-void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
+void	algorithm_five(t_node **stack_a, t_node **stack_b);
 
 int		algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
 
@@ -58,6 +58,14 @@ void	maxpass_loop(t_node **stack_a, t_node **stack_b \
 			, int argc, int max_pass);
 
 int		find_maxdivide(t_node *head);
+
+/*
+	UTILS
+*/
+
+int		find_min(t_node *stack_a);
+
+int		find_sec_min(t_node *stack_a);
 
 /*
 	LIBFT

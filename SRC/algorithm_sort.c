@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/01 16:35:40 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	algorithm_two(t_node **head)
 {
@@ -80,35 +80,30 @@ void	algorithm_three_b(t_node **head)
 /*
 	ALGORITHM 5
 	---
-	I will mainly use algorithm_three() to sort 5 numbers,
-	but I will push some numbers to stack_b.
+	I will first look for the minimum number
+	and the second minimum number. Afterward I will push them to stack_b.
+	Use algorithm_three and push all numbers back to stack_a.
 
-	The first "while-loop" uses i as index and argc as limit.
-	Because "argc" is a total of all inputs. I put -3 to assure
-	that only 3 numbers will remain in stack_a.
-
-	t_node temp will go to the last number BEFORE the second "while-loop".
 */
 
-void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
+void	algorithm_five(t_node **stack_a, t_node **stack_b)
 {
-	int	i;
+	int	min_number;
+	int	sec_min_number;
 
-	i = 0;
-	while (i < argc - 3)
-	{
+	min_number = find_min(*stack_a);
+	sec_min_number = find_sec_min(*stack_a);
+	while (min_number != (*stack_a)->value)
+		action_ra(stack_a);
+	if (min_number == (*stack_a)->value)
 		action_pb(stack_a, stack_b);
-		i++;
-	}
+	while (sec_min_number != (*stack_a)->value)
+		action_ra(stack_a);
+	if (sec_min_number == (*stack_a)->value)
+		action_pb(stack_a, stack_b);
 	algorithm_three_a(stack_a);
-	while (i > 0)
-	{
+	while (*stack_b != NULL)
 		action_pa(stack_a, stack_b);
-		algorithm_three_a(stack_a);
-		i--;
-	}
-	if (ft_issorted(*stack_a) == false)
-		algorithm_five(stack_a, stack_b, argc);
 }
 
 /*

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   algorithm_sb.c                                     :+:    :+:            */
+/*   algorithm_sa.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 20:43:06 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/28 17:11:52 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void	print_sb(void)
+void	print_sa(void)
 {
-	write(1, "sb", 2);
+	write(1, "sa", 2);
 	write(1, "\n", 1);
 }
 
-void	action_sb(t_node **head)
+void	action_sa(t_node **head)
 {
 	int		first;
 	int		second;
@@ -27,5 +27,5 @@ void	action_sb(t_node **head)
 	second = (*head)->next->value;
 	(*head)->value = second;
 	(*head)->next->value = first;
-	print_sb();
+	print_sa();
 }

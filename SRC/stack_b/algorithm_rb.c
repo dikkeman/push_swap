@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   algorithm_ra.c                                     :+:    :+:            */
+/*   algorithm_rb.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 19:45:58 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/01 13:45:06 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void	print_ra(void)
+void	print_rb(void)
 {
-	write(1, "ra", 2);
+	write(1, "rb", 2);
 	write(1, "\n", 1);
 }
 
-void	action_ra(t_node **head)
+void	action_rb(t_node **head)
 {
 	t_node	*last;
 	t_node	*first;
@@ -30,16 +30,16 @@ void	action_ra(t_node **head)
 	*head = first->next;
 	first->next = NULL;
 	last->next = first;
-	print_ra();
+	print_rb();
 }
 
-void	print_rra(void)
+void	print_rrb(void)
 {
-	write(1, "rra", 3);
+	write(1, "rrb", 3);
 	write(1, "\n", 1);
 }
 
-void	action_rra(t_node **head)
+void	action_rrb(t_node **head)
 {
 	t_node	*temp;
 	t_node	*second_last;
@@ -51,5 +51,5 @@ void	action_rra(t_node **head)
 	second_last->next = NULL;
 	temp->next = *head;
 	*head = temp;
-	print_rra();
+	print_rrb();
 }
