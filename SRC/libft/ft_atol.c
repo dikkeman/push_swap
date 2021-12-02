@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_atol.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
+/*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/20 14:54:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 20:06:32 by xvoorvaa      ########   odam.nl         */
+/*   Created: 2021/12/02 20:05:24 by xvoorvaa      #+#    #+#                 */
+/*   Updated: 2021/12/02 20:05:30 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
-	int	i;
-	int	negative;
-	int	answer;
+	int		i;
+	int		negative;
+	long	answer;
 
 	i = 0;
 	answer = 0;

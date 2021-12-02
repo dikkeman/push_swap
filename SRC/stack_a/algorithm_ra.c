@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 19:45:58 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 16:10:08 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ void	action_ra(t_node **head)
 
 	last = *head;
 	first = *head;
-	while (last->next != NULL)
-		last = last->next;
-	*head = first->next;
-	first->next = NULL;
-	last->next = first;
+	if ((*head)->next != NULL)
+	{
+		while (last->next != NULL)
+			last = last->next;
+		*head = first->next;
+		first->next = NULL;
+		last->next = first;
+	}
 	print_ra();
 }
 

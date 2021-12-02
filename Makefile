@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/02 13:54:25 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/02 20:19:22 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS			=	push_swap.c \
 					SRC/big_sort.c \
 					SRC/find_num.c \
 					SRC/libft/ft_atoi.c  \
+					SRC/libft/ft_atol.c  \
 					SRC/libft/ft_isdigit.c \
 					SRC/libft/ft_calloc.c \
 					SRC/libft/ft_bzero.c \
@@ -46,12 +47,13 @@ $(NAME):	$(OBJS)
 	@printf $(COMP_MESSAGE) $(SRCS)
 	@echo $(MESSAGE)
 
-leaks:		$(NAME)
+leaks:
 	@gcc $(CFLAGS) $(SRCS) $(LEAKS) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
 	@echo $(MESSAGE)
 
 clean:
+	@echo "\n"
 	@rm -f $(OBJS)
 	@printf $(REM_MESSAGE)
 	@echo "\n"
@@ -59,7 +61,8 @@ clean:
 
 fclean:		clean
 	@rm -f push_swap
+	@rm -rf push_swap.dSYM
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all leaks clean fclean re

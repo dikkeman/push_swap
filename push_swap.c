@@ -6,11 +6,12 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:54:34 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 20:14:33 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
 int	check_nonvalid(int argc, char **argv)
 {
@@ -64,17 +65,24 @@ int	check_duplicates(int *data, int argc)
 
 int	check_errors(int *data, int argc, char **argv)
 {
-	if (argc <= 2)
+	int	i;
+	int	error;
+
+	i = 0;
+	error = 0;
+	if (argc < 2)
+		error = true;
+	while (i < argc - 1)
 	{
-		write(1, "Error\n", 6);
-		return (1);
+		if (ft_atol(argv[i + 1]) != data[i])
+			error = true;
+		i++;
 	}
 	if (check_duplicates(data, argc) == true)
-	{
-		write(1, "Error\n", 6);
-		return (1);
-	}
+		error = true;
 	if (check_nonvalid(argc, argv) == true)
+		error = true;
+	if (error == true)
 	{
 		write(1, "Error\n", 6);
 		return (1);
@@ -92,7 +100,7 @@ int	algorithm_check(t_node **stack_a, t_node **stack_b, int argc)
 	else if (argc == 4)
 		algorithm_three_a(stack_a);
 	else if (argc <= 6 && argc >= 5)
-		algorithm_five(stack_a, stack_b);
+		algorithm_five(stack_a, stack_b, argc);
 	else if (argc > 6)
 		malloc_check = algorithm_radix(stack_a, stack_b, argc - 1);
 	return (malloc_check);

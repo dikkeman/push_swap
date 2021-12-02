@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/02 13:55:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:55:49 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 19:34:22 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	algorithm_three_a(t_node **head);
 
 void	algorithm_three_b(t_node **head);
 
-void	algorithm_five(t_node **stack_a, t_node **stack_b);
+void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
 
 int		algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
 
@@ -72,6 +72,8 @@ int		find_sec_min(t_node *stack_a);
 */
 
 int		ft_atoi(const char *str);
+
+long	ft_atol(const char *str);
 
 int		ft_isdigit(int input);
 

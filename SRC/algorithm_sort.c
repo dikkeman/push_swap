@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/02 16:11:38 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	algorithm_three_b(t_node **head)
 
 */
 
-void	algorithm_five(t_node **stack_a, t_node **stack_b)
+void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 {
 	int	min_number;
 	int	sec_min_number;
@@ -97,10 +97,13 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b)
 		action_ra(stack_a);
 	if (min_number == (*stack_a)->value)
 		action_pb(stack_a, stack_b);
-	while (sec_min_number != (*stack_a)->value)
-		action_ra(stack_a);
-	if (sec_min_number == (*stack_a)->value)
-		action_pb(stack_a, stack_b);
+	if (argc > 5)
+	{
+		while (sec_min_number != (*stack_a)->value)
+			action_ra(stack_a);
+		if (sec_min_number == (*stack_a)->value)
+			action_pb(stack_a, stack_b);
+	}
 	algorithm_three_a(stack_a);
 	while (*stack_b != NULL)
 		action_pa(stack_a, stack_b);
