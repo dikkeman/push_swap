@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 11:58:07 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	ft_issorted(t_node *head)
 {
@@ -21,30 +21,6 @@ int	ft_issorted(t_node *head)
 		head = head->next;
 	}
 	return (true);
-}
-
-void	print_tag(t_node *head)
-{
-	printf("TAGS:\n");
-	while (head != NULL)
-	{
-		printf("%d -> ", head->tag);
-		head = head->next;
-	}
-	printf("NULL\n");
-	write(1, "\n", 1);
-}
-
-void	print_list(t_node *head)
-{
-	printf("\n");
-	while (head != NULL)
-	{
-		printf("%d -> ", head->value);
-		head = head->next;
-	}
-	printf("NULL\n");
-	write(1, "\n", 1);
 }
 
 void	new_node(t_node **head, int value, int tag)

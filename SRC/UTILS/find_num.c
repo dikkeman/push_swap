@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/02 13:45:33 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 11:58:01 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	find_min(t_node *stack_a)
 {

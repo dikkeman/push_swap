@@ -6,13 +6,12 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/02 13:55:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 19:34:22 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 12:51:01 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
@@ -105,13 +104,9 @@ void	action_pb(t_node **stack_a, t_node **stack_b);
 	LISTS
 */
 
-void	print_list(t_node *head);
-
 void	new_node(t_node **head, int number, int tag);
 
 int		ft_issorted(t_node *head);
-
-void	print_tag(t_node *head);
 
 int		tree_sort(t_node **stack_a);
 

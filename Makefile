@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/02 20:19:22 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/03 11:58:38 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,16 @@ CFLAGS			=	-Wall -Werror -Wextra
 LEAKS			=	-g3 -fsanitize=address
 OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
-					SRC/linkedlist.c \
 					SRC/stack_a/algorithm_sa.c \
 					SRC/stack_a/algorithm_ra.c \
 					SRC/stack_b/algorithm_sb.c \
 					SRC/stack_b/algorithm_rb.c \
-					SRC/tree_sort.c \
 					SRC/algorithm_p.c \
+					SRC/tree_sort.c \
 					SRC/algorithm_sort.c \
 					SRC/big_sort.c \
-					SRC/find_num.c \
+					SRC/UTILS/linkedlist.c \
+					SRC/UTILS/find_num.c \
 					SRC/libft/ft_atoi.c  \
 					SRC/libft/ft_atol.c  \
 					SRC/libft/ft_isdigit.c \

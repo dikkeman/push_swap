@@ -6,12 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 20:14:33 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 11:53:43 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
 
 int	check_nonvalid(int argc, char **argv)
 {
@@ -24,6 +23,8 @@ int	check_nonvalid(int argc, char **argv)
 	{
 		while (argv[i][j] != '\0')
 		{
+			if (ft_isdigit(argv[i][j + 1]) == 0 && argv[i][j] == '-')
+				return (true);
 			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != '-')
 				return (true);
 			j++;
@@ -83,7 +84,7 @@ int	check_errors(int *data, int argc, char **argv)
 	if (check_nonvalid(argc, argv) == true)
 		error = true;
 	if (error == true)
-	{
+	{	
 		write(1, "Error\n", 6);
 		return (1);
 	}
