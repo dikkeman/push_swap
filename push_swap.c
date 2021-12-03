@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/03 11:53:43 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 14:15:40 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	algorithm_check(t_node **stack_a, t_node **stack_b, int argc)
 	if (argc == 3)
 		algorithm_two(stack_a);
 	else if (argc == 4)
-		algorithm_three_a(stack_a);
+		algorithm_three(stack_a);
 	else if (argc <= 6 && argc >= 5)
 		algorithm_five(stack_a, stack_b, argc);
 	else if (argc > 6)

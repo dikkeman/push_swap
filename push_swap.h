@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/02 13:55:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/03 12:51:01 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 14:18:22 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ typedef struct s_tree {
 
 void	algorithm_two(t_node **head);
 
-void	algorithm_three_a(t_node **head);
-
-void	algorithm_three_b(t_node **head);
+void	algorithm_three(t_node **head);
 
 void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
 
@@ -89,8 +87,6 @@ void	action_sa(t_node **head);
 void	action_ra(t_node **head);
 
 void	action_rra(t_node **head);
-
-void	action_sb(t_node **head);
 
 void	action_rb(t_node **head);
 

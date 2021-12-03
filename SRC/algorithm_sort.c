@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 16:11:38 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 14:15:54 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	algorithm_two(t_node **head)
 	Is it stack_a or stack_b?
 */
 
-void	algorithm_three_a(t_node **head)
+void	algorithm_three(t_node **head)
 {
 	int	number1;
 	int	number2;
@@ -47,33 +47,6 @@ void	algorithm_three_a(t_node **head)
 	{
 		action_sa(head);
 		action_ra(head);
-	}
-}
-
-void	algorithm_three_b(t_node **head)
-{
-	int	number1;
-	int	number2;
-	int	number3;
-
-	number1 = (*head)->value;
-	number2 = (*head)->next->value;
-	number3 = (*head)->next->next->value;
-	if (number1 > number2 && number2 > number3 && number3 < number1)
-	{
-		action_sb(head);
-		action_rrb(head);
-	}
-	else if (number2 < number3 && number1 < number3 && number1 > number2)
-		action_sb(head);
-	else if (number1 < number2 && number1 > number3 && number2 > number3)
-		action_rrb(head);
-	else if (number1 > number2 && number1 > number3 && number2 < number3)
-		action_rb(head);
-	else if (number1 < number2 && number2 > number3 && number1 < number3)
-	{
-		action_sb(head);
-		action_rb(head);
 	}
 }
 
@@ -104,7 +77,7 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 		if (sec_min_number == (*stack_a)->value)
 			action_pb(stack_a, stack_b);
 	}
-	algorithm_three_a(stack_a);
+	algorithm_three(stack_a);
 	while (*stack_b != NULL)
 		action_pa(stack_a, stack_b);
 }

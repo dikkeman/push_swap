@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/03 11:58:38 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/03 14:18:34 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ OBJS			=	$(SRCS:.c)
 SRCS			=	push_swap.c \
 					SRC/stack_a/algorithm_sa.c \
 					SRC/stack_a/algorithm_ra.c \
-					SRC/stack_b/algorithm_sb.c \
 					SRC/stack_b/algorithm_rb.c \
 					SRC/algorithm_p.c \
 					SRC/tree_sort.c \
