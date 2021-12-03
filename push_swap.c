@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/03 14:15:40 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 17:37:59 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,6 @@ int	check_errors(int *data, int argc, char **argv)
 
 	i = 0;
 	error = 0;
-	if (argc < 2)
-		error = true;
 	while (i < argc - 1)
 	{
 		if (ft_atol(argv[i + 1]) != data[i])

@@ -6,12 +6,13 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/02 13:55:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/03 14:18:22 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 17:09:10 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
@@ -45,11 +46,7 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc);
 
 int		algorithm_radix(t_node **stack_a, t_node **stack_b, int argc);
 
-void	radix_sort_a(t_node **stack_a, t_node **stack_b \
-			, int max_numbers, int divide);
-
-void	radix_sort_b(t_node **stack_a, t_node **stack_b \
-			, int max_numbers, int divide);
+void	radix_sort(t_node **stack_a, t_node **stack_b, int max_numbers, int max_bits);
 
 void	maxpass_loop(t_node **stack_a, t_node **stack_b \
 			, int argc, int max_pass);
@@ -63,6 +60,10 @@ int		find_maxdivide(t_node *head);
 int		find_min(t_node *stack_a);
 
 int		find_sec_min(t_node *stack_a);
+
+void	print_tag(t_node *head);
+
+void	print_list(t_node *head);
 
 /*
 	LIBFT

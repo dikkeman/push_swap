@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/03 17:36:29 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,26 @@
 	TAGS  -> 03 02 01 04 00
 */
 
+int	ft_length_list(t_node *stack_a)
+{
+	int tag;
+
+	tag = 0;
+	while (stack_a != NULL)
+	{
+		tag++;
+		stack_a =stack_a->next;
+	}
+	return (tag);
+}
+
 void	index_values(t_tree *head, int *tag)
 {
 	if (head != NULL)
 	{
 		index_values(head->left, tag);
 		head->list->tag = *tag;
-		(*tag)++;
+		(*tag)--;
 		index_values(head->right, tag);
 		free(head);
 	}
@@ -93,7 +106,7 @@ int	tree_sort(t_node **stack_a)
 	t_tree	*root;
 	t_node	*main_list;
 
-	tag = 0;
+	tag = ft_length_list(*stack_a);
 	root = ft_calloc(sizeof(t_tree), 1);
 	if (!root)
 		return (-1);
