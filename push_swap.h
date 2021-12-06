@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/02 13:55:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/06 15:52:12 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/06 20:22:28 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,6 @@ void	radix_sort(t_node **stack_a, t_node **stack_b \
 int		find_maxbits(t_node *head);
 
 /*
-	UTILS
-*/
-
-int		find_min(t_node *stack_a);
-
-int		find_sec_min(t_node *stack_a);
-
-/*
 	LIBFT
 */
 
@@ -100,5 +92,7 @@ void	new_node(t_node **head, int number, int tag);
 int		ft_issorted(t_node *head);
 
 int		tree_sort(t_node **stack_a);
+
+int		find_min(t_node *stack_a);
 
 #endif
