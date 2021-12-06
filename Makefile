@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/06 18:21:15 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/06 20:18:50 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,7 @@ SRCS			=	push_swap.c \
 					SRC/tree_sort.c \
 					SRC/algorithm_sort.c \
 					SRC/big_sort.c \
-					SRC/UTILS/linkedlist.c \
-					SRC/UTILS/find_num.c \
+					SRC/linkedlist.c \
 					SRC/libft/ft_atoi.c  \
 					SRC/libft/ft_atol.c  \
 					SRC/libft/ft_isdigit.c \

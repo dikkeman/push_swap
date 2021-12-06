@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/06 15:41:29 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/06 20:14:09 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	algorithm_three(t_node **head)
 void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 {
 	int	min_number;
-	int	sec_min_number;
 
 	min_number = find_min(*stack_a);
 	while (min_number != (*stack_a)->value)
@@ -71,10 +70,10 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 		action_pb(stack_a, stack_b);
 	if (argc > 5)
 	{
-		sec_min_number = find_sec_min(*stack_a);
-		while (sec_min_number != (*stack_a)->value)
+		min_number = find_min(*stack_a);
+		while (min_number != (*stack_a)->value)
 			action_ra(stack_a);
-		if (sec_min_number == (*stack_a)->value)
+		if (min_number == (*stack_a)->value)
 			action_pb(stack_a, stack_b);
 	}
 	algorithm_three(stack_a);
@@ -102,7 +101,8 @@ int	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 	if (malloc_protect == -1)
 		return (-1);
 	max_bits = find_maxbits(*stack_a);
-	radix_sort(stack_a, stack_b, argc, max_bits);
+	if (ft_issorted(*stack_a) == false)
+		radix_sort(stack_a, stack_b, argc, max_bits);
 	while (*stack_b != NULL)
 		action_pa(stack_a, stack_b);
 	return (0);

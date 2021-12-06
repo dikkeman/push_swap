@@ -6,11 +6,25 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/06 15:41:36 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/06 20:18:40 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
+
+int	find_min(t_node *stack_a)
+{
+	int	min_number;
+
+	min_number = stack_a->value;
+	while (stack_a != NULL)
+	{
+		if (min_number > stack_a->value)
+			min_number = stack_a->value;
+		stack_a = stack_a->next;
+	}
+	return (min_number);
+}
 
 int	ft_issorted(t_node *head)
 {
