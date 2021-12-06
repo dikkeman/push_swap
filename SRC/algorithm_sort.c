@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/03 14:15:54 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/06 15:41:29 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 	int	sec_min_number;
 
 	min_number = find_min(*stack_a);
-	sec_min_number = find_sec_min(*stack_a);
 	while (min_number != (*stack_a)->value)
 		action_ra(stack_a);
 	if (min_number == (*stack_a)->value)
 		action_pb(stack_a, stack_b);
 	if (argc > 5)
 	{
+		sec_min_number = find_sec_min(*stack_a);
 		while (sec_min_number != (*stack_a)->value)
 			action_ra(stack_a);
 		if (sec_min_number == (*stack_a)->value)
@@ -95,25 +95,15 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 
 int	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 {
-	int	i;
-	int	max_pass;
-	int	max_numbers;
+	int	max_bits;
 	int	malloc_protect;
 
-	i = argc;
-	max_numbers = argc;
 	malloc_protect = tree_sort(stack_a);
 	if (malloc_protect == -1)
 		return (-1);
-	max_pass = find_maxdivide(*stack_a);
-	maxpass_loop(stack_a, stack_b, max_numbers, max_pass);
-	if (*stack_a == NULL)
-	{
-		while (i > 0)
-		{
-			action_pa(stack_a, stack_b);
-			i--;
-		}
-	}
+	max_bits = find_maxbits(*stack_a);
+	radix_sort(stack_a, stack_b, argc, max_bits);
+	while (*stack_b != NULL)
+		action_pa(stack_a, stack_b);
 	return (0);
 }

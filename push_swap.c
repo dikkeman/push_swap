@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/03 17:37:59 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/06 15:38:29 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	check_duplicates(int *data, int argc)
 	Invalid inputs:
 	- Duplicate numbers
 	- Some arguments aren’t integers
-	- No input
 	- MAX_INT + 1 or MIN_INT - 1
 */
 

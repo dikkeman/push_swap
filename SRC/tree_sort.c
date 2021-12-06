@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/03 17:36:29 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/06 15:53:31 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@
 
 int	ft_length_list(t_node *stack_a)
 {
-	int tag;
+	int	tag;
 
 	tag = 0;
 	while (stack_a != NULL)
 	{
 		tag++;
-		stack_a =stack_a->next;
+		stack_a = stack_a->next;
 	}
 	return (tag);
 }
