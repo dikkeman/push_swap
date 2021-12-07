@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/06 20:16:24 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/07 10:30:48 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ int	algorithm_check(t_node **stack_a, t_node **stack_b, int argc)
 		algorithm_two(stack_a);
 	else if (argc == 4)
 		algorithm_three(stack_a);
-	else if (argc <= 6 && argc >= 5)
+	else if (argc <= 6 && argc >= 5 && ft_issorted(*stack_a) == false)
 		algorithm_five(stack_a, stack_b, argc);
-	else if (argc > 6)
+	else if (argc > 6 && ft_issorted(*stack_a) == false)
 		malloc_check = algorithm_radix(stack_a, stack_b, argc - 1);
 	return (malloc_check);
 }

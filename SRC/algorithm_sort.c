@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/06 20:14:09 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/07 10:31:27 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,7 @@ int	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 	if (malloc_protect == -1)
 		return (-1);
 	max_bits = find_maxbits(*stack_a);
-	if (ft_issorted(*stack_a) == false)
-		radix_sort(stack_a, stack_b, argc, max_bits);
+	radix_sort(stack_a, stack_b, argc, max_bits);
 	while (*stack_b != NULL)
 		action_pa(stack_a, stack_b);
 	return (0);
