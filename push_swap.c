@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/07 10:30:48 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/12 18:52:02 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	check_errors(int *data, int argc, char **argv)
 		error = true;
 	if (error == true)
 	{	
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		return (1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/07 10:31:27 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/12 18:30:06 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 	{
 		min_number = find_min(*stack_a);
 		while (min_number != (*stack_a)->value)
-			action_ra(stack_a);
+			action_rra(stack_a);
 		if (min_number == (*stack_a)->value)
 			action_pb(stack_a, stack_b);
 	}

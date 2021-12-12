@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/06 20:18:50 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/12 18:58:47 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,16 +34,20 @@ BLUE			=	\033[1;36m
 RED				=	\033[0;31m
 NC				=	\033[0m # No Color
 
+START			= "$(BLUE)---\nStarting...!\n---$(NC)"
 MESSAGE			= "$(BLUE)---\nCompiling done! Run ./push_swap\n---$(NC)"
 COMP_MESSAGE	= "$(GREEN)Building C object... $(NC)%-33.33s\r\n"
 REM_MESSAGE		= "$(RED)Removing files...$(NC)"
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME): decoy
 	@gcc $(CFLAGS) $(SRCS) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
 	@echo $(MESSAGE)
+
+decoy:
+	@echo $(START)
 
 leaks:
 	@gcc $(CFLAGS) $(SRCS) $(LEAKS) -o $(NAME)
