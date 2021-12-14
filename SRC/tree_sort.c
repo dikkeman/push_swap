@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/06 15:53:31 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/14 14:34:07 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,5 @@ int	tree_sort(t_node **stack_a)
 			return (-1);
 	}
 	index_values(root, &tag);
-	*stack_a = root->list;
 	return (0);
 }

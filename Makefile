@@ -6,14 +6,15 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/12 18:58:47 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/14 16:06:44 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
+NAME_EXE		=	push_swap_exe
 CFLAGS			=	-Wall -Werror -Wextra
 LEAKS			=	-g3 -fsanitize=address
-OBJS			=	$(SRCS:.c)
+OBJS			=	$(SRCS:.c=.o)
 SRCS			=	push_swap.c \
 					SRC/stack_a/algorithm_sa.c \
 					SRC/stack_a/algorithm_ra.c \
@@ -41,17 +42,22 @@ REM_MESSAGE		= "$(RED)Removing files...$(NC)"
 
 all:		$(NAME)
 
-$(NAME): decoy
-	@gcc $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	@echo $(START)
+	@ar rcs $(NAME_EXE) $(OBJS)
+	@clear
+	@gcc $(CFLAGS) $(NAME_EXE) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
+	@rm -rf $(OBJS) $(NAME_EXE)
 	@echo $(MESSAGE)
 
-decoy:
-	@echo $(START)
-
 leaks:
-	@gcc $(CFLAGS) $(SRCS) $(LEAKS) -o $(NAME)
+	@echo $(START)
+	@ar rcs $(NAME_EXE) $(OBJS)
+	@clear
+	@gcc $(CFLAGS) $(NAME_EXE) $(LEAKS) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
+	@rm -rf $(OBJS) $(NAME_EXE)
 	@echo $(MESSAGE)
 
 clean:
