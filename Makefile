@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/14 16:06:44 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/16 15:46:32 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,18 +43,18 @@ REM_MESSAGE		= "$(RED)Removing files...$(NC)"
 all:		$(NAME)
 
 $(NAME): $(OBJS)
-	@echo $(START)
 	@ar rcs $(NAME_EXE) $(OBJS)
 	@clear
+	@echo $(START)
 	@gcc $(CFLAGS) $(NAME_EXE) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
 	@rm -rf $(OBJS) $(NAME_EXE)
 	@echo $(MESSAGE)
 
 leaks:
-	@echo $(START)
 	@ar rcs $(NAME_EXE) $(OBJS)
 	@clear
+	@echo $(START)
 	@gcc $(CFLAGS) $(NAME_EXE) $(LEAKS) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
 	@rm -rf $(OBJS) $(NAME_EXE)

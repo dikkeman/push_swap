@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/06 20:18:40 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/16 16:06:33 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,23 @@ int	find_min(t_node *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (min_number);
+}
+
+int	pathfinding(t_node *stack_a)
+{
+	int	i;
+	int	min_number;
+
+	i = 0;
+	min_number = find_min(stack_a);
+	while (min_number != stack_a->value)
+	{
+		stack_a = stack_a->next;
+		i++;
+	}
+	if (i > 2)
+		return (1);
+	return (0);
 }
 
 int	ft_issorted(t_node *head)

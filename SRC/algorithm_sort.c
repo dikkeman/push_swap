@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/12 18:30:06 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/16 16:13:11 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,24 @@ void	algorithm_three(t_node **head)
 
 void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 {
+	int	path;
 	int	min_number;
 
+	path = pathfinding(*stack_a);
 	min_number = find_min(*stack_a);
-	while (min_number != (*stack_a)->value)
+	while (min_number != (*stack_a)->value && path == 0)
 		action_ra(stack_a);
+	while (min_number != (*stack_a)->value && path == 1)
+		action_rra(stack_a);
 	if (min_number == (*stack_a)->value)
 		action_pb(stack_a, stack_b);
 	if (argc > 5)
 	{
 		min_number = find_min(*stack_a);
-		while (min_number != (*stack_a)->value)
+		path = pathfinding(*stack_a);
+		while (min_number != (*stack_a)->value && path == 0)
+			action_ra(stack_a);
+		while (min_number != (*stack_a)->value && path == 1)
 			action_rra(stack_a);
 		if (min_number == (*stack_a)->value)
 			action_pb(stack_a, stack_b);
