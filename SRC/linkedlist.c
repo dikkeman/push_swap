@@ -6,11 +6,24 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/16 19:40:53 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/16 22:41:19 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	free_list(t_node **head)
+{
+	t_node	*temp;
+
+	while (*head != NULL)
+	{
+		temp = *head;
+		*head = (*head)->next;
+		free(temp);
+	}
+	return (-1);
+}
 
 int	find_min(t_node *stack_a)
 {
@@ -61,7 +74,10 @@ void	new_node(t_node **head, int value, int tag)
 
 	new_node = ft_calloc(sizeof(t_node), 1);
 	if (!new_node)
+	{
+		free(new_node);
 		return ;
+	}
 	last_node = *head;
 	new_node->value = value;
 	new_node->tag = tag;

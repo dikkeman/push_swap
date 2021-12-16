@@ -6,18 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/16 19:40:38 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/16 22:41:03 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	free_errno(int *data, t_node *stack_a)
-{
-	free(data);
-	free(stack_a);
-	return (-1);
-}
 
 int	algorithm_check(t_node **stack_a, t_node **stack_b, int argc)
 {
@@ -39,26 +32,21 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	int		error;
-	int		*data;
 	t_node	*stack_a;
 	t_node	*stack_b;
 
 	i = 1;
 	error = 0;
-	data = ft_calloc(sizeof(int) * (argc - 1), 1);
-	if (!data)
-		return (-1);
 	while (i < argc)
 	{
 		new_node(&stack_a, ft_atoi(argv[i]), 0);
-		data[i - 1] = ft_atoi(argv[i]);
+		if (!stack_a)
+			return (free_list(&stack_a));
 		i++;
-		if (stack_a == NULL)
-			return (free_errno(data, stack_a));
 	}
-	if (check_errors(data, argc, argv) == 0)
+	if (check_errors(argc, argv) == 0)
 		error = algorithm_check(&stack_a, &stack_b, argc);
 	if (error == -1)
-		return (free_errno(data, stack_a));
+		return (free_list(&stack_a));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 19:35:01 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/16 19:36:40 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/16 22:34:16 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ int	check_nonvalid(int argc, char **argv)
 	return (false);
 }
 
-int	check_duplicates(int *data, int argc)
+int	check_duplicates(int argc, char *argv[])
 {
 	int	i;
 	int	counter;
 
-	i = 0;
-	counter = 1;
-	while (i < argc - 1)
+	i = 1;
+	counter = 2;
+	while (i < argc)
 	{
-		while (counter < argc - 1)
+		while (counter < argc)
 		{
-			if (data[i] - data[counter] == 0)
+			if (ft_atoi(argv[i]) - ft_atoi(argv[counter]) == 0)
 				return (true);
 			counter++;
 		}
@@ -63,7 +63,7 @@ int	check_duplicates(int *data, int argc)
 	- MAX_INT + 1 or MIN_INT - 1
 */
 
-int	check_errors(int *data, int argc, char **argv)
+int	check_errors(int argc, char **argv)
 {
 	int	i;
 	int	error;
@@ -72,11 +72,11 @@ int	check_errors(int *data, int argc, char **argv)
 	error = 0;
 	while (i < argc - 1)
 	{
-		if (ft_atol(argv[i + 1]) != data[i])
+		if (ft_atol(argv[i + 1]) != ft_atoi(argv[i + 1]))
 			error = true;
 		i++;
 	}
-	if (check_duplicates(data, argc) == true)
+	if (check_duplicates(argc, argv) == true)
 		error = true;
 	if (check_nonvalid(argc, argv) == true)
 		error = true;

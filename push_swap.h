@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/02 13:55:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/16 19:36:08 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/16 22:42:39 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ int		pathfinding(t_node *stack_a);
 
 int		find_min(t_node *stack_a);
 
-int		check_errors(int *data, int argc, char **argv);
+int		check_errors(int argc, char **argv);
+
+int		free_list(t_node **head);
 
 #endif
