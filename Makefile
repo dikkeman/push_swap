@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/15 18:01:23 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2021/12/16 15:46:32 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2021/12/16 19:35:27 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS			=	push_swap.c \
 					SRC/libft/ft_isdigit.c \
 					SRC/libft/ft_calloc.c \
 					SRC/libft/ft_bzero.c \
+					SRC/errno.c \
 
 GREEN			=	\033[1;32m
 BLUE			=	\033[1;36m
@@ -48,16 +49,14 @@ $(NAME): $(OBJS)
 	@echo $(START)
 	@gcc $(CFLAGS) $(NAME_EXE) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
-	@rm -rf $(OBJS) $(NAME_EXE)
+	@rm -rf $(NAME_EXE)
 	@echo $(MESSAGE)
 
 leaks:
-	@ar rcs $(NAME_EXE) $(OBJS)
 	@clear
 	@echo $(START)
-	@gcc $(CFLAGS) $(NAME_EXE) $(LEAKS) -o $(NAME)
+	@gcc $(CFLAGS) $(SRCS) $(LEAKS) -o $(NAME)
 	@printf $(COMP_MESSAGE) $(SRCS)
-	@rm -rf $(OBJS) $(NAME_EXE)
 	@echo $(MESSAGE)
 
 clean:

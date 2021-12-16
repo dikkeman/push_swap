@@ -6,86 +6,17 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/14 16:08:44 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/16 19:40:38 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_nonvalid(int argc, char **argv)
+int	free_errno(int *data, t_node *stack_a)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (i < argc)
-	{
-		while (argv[i][j] != '\0')
-		{
-			if (ft_isdigit(argv[i][j + 1]) == 0 && argv[i][j] == '-')
-				return (true);
-			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != '-')
-				return (true);
-			j++;
-		}
-		j = 0;
-		i++;
-	}
-	return (false);
-}
-
-int	check_duplicates(int *data, int argc)
-{
-	int	i;
-	int	counter;
-
-	i = 0;
-	counter = 1;
-	while (i < argc - 1)
-	{
-		while (counter < argc - 1)
-		{
-			if (data[i] - data[counter] == 0)
-				return (true);
-			counter++;
-		}
-		i++;
-		counter = i + 1;
-	}
-	return (false);
-}
-
-/*	
-	Invalid inputs:
-	- Duplicate numbers
-	- Some arguments aren’t integers
-	- MAX_INT + 1 or MIN_INT - 1
-*/
-
-int	check_errors(int *data, int argc, char **argv)
-{
-	int	i;
-	int	error;
-
-	i = 0;
-	error = 0;
-	while (i < argc - 1)
-	{
-		if (ft_atol(argv[i + 1]) != data[i])
-			error = true;
-		i++;
-	}
-	if (check_duplicates(data, argc) == true)
-		error = true;
-	if (check_nonvalid(argc, argv) == true)
-		error = true;
-	if (error == true)
-	{	
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	return (0);
+	free(data);
+	free(stack_a);
+	return (-1);
 }
 
 int	algorithm_check(t_node **stack_a, t_node **stack_b, int argc)
@@ -122,10 +53,12 @@ int	main(int argc, char **argv)
 		new_node(&stack_a, ft_atoi(argv[i]), 0);
 		data[i - 1] = ft_atoi(argv[i]);
 		i++;
+		if (stack_a == NULL)
+			return (free_errno(data, stack_a));
 	}
 	if (check_errors(data, argc, argv) == 0)
 		error = algorithm_check(&stack_a, &stack_b, argc);
 	if (error == -1)
-		return (-1);
+		return (free_errno(data, stack_a));
 	return (0);
 }
