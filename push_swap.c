@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/16 22:41:03 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/19 17:37:37 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int argc, char **argv)
 
 	i = 1;
 	error = 0;
+	stack_a = NULL;
+	stack_b = NULL;
 	while (i < argc)
 	{
 		new_node(&stack_a, ft_atoi(argv[i]), 0);

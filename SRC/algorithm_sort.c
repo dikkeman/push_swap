@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/16 16:13:11 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/12/19 17:38:11 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,13 @@ void	algorithm_five(t_node **stack_a, t_node **stack_b, int argc)
 	if (min_number == (*stack_a)->value)
 		action_pb(stack_a, stack_b);
 	if (argc > 5)
-	{
-		min_number = find_min(*stack_a);
-		path = pathfinding(*stack_a);
-		while (min_number != (*stack_a)->value && path == 0)
-			action_ra(stack_a);
-		while (min_number != (*stack_a)->value && path == 1)
-			action_rra(stack_a);
-		if (min_number == (*stack_a)->value)
-			action_pb(stack_a, stack_b);
-	}
+		algorithm_five(stack_a, stack_b, argc - 1);
 	algorithm_three(stack_a);
-	while (*stack_b != NULL)
-		action_pa(stack_a, stack_b);
+	action_pa(stack_a, stack_b);
 }
 
 /*
-	ALGORITHM MAX
+	ALGORITHM RADIX
 	---
 
 	The Radix sort won't be too difficult. I will pre sort with a tree system.
@@ -109,7 +99,5 @@ int	algorithm_radix(t_node **stack_a, t_node **stack_b, int argc)
 		return (-1);
 	max_bits = find_maxbits(*stack_a);
 	radix_sort(stack_a, stack_b, argc, max_bits);
-	while (*stack_b != NULL)
-		action_pa(stack_a, stack_b);
 	return (0);
 }
