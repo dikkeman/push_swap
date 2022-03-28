@@ -6,11 +6,34 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/19 17:37:37 by xander        ########   odam.nl         */
+/*   Updated: 2022/03/28 20:30:43 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static bool	check_invalid_chars(char *argv[])
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 1;
+	while (argv[i] != NULL)
+	{
+		if (ft_isdigit(argv[i][j]) == false)
+			return (true);
+		while (argv[i][j] != '\0')
+		{
+			if (ft_isdigit(argv[i][j]) == false)
+				return (true);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (false);
+}
 
 int	algorithm_check(t_node **stack_a, t_node **stack_b, int argc)
 {
@@ -39,6 +62,11 @@ int	main(int argc, char **argv)
 	error = 0;
 	stack_a = NULL;
 	stack_b = NULL;
+	if (check_invalid_chars(argv) == true)
+	{
+		write(STDERR_FILENO, "Error\n", 6);
+		return (1);
+	}
 	while (i < argc)
 	{
 		new_node(&stack_a, ft_atoi(argv[i]), 0);

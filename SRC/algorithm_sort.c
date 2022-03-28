@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/09 23:53:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/19 17:38:11 by xander        ########   odam.nl         */
+/*   Updated: 2022/03/28 20:16:19 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	algorithm_two(t_node **head)
 	if ((*head)->value > (*head)->next->value)
 		action_sa(head);
 }
-
-/*
-	Use a INT in the function to tell my program what stack it is.
-	Is it stack_a or stack_b?
-*/
 
 void	algorithm_three(t_node **head)
 {

@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 20:43:06 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/02 13:53:44 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/03/28 20:16:01 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	print_sa(void)
 {
-	write(1, "sa", 2);
-	write(1, "\n", 1);
+	write(STDOUT_FILENO, "sa", 2);
+	write(STDOUT_FILENO, "\n", 1);
 }
 
 void	action_sa(t_node **head)
