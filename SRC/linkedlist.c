@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 19:02:47 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/19 17:36:08 by xander        ########   odam.nl         */
+/*   Updated: 2022/04/03 22:13:43 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	free_list(t_node **head)
 {

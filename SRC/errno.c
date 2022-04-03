@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 19:35:01 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/16 22:34:16 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/04/03 22:13:43 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	check_nonvalid(int argc, char **argv)
 {
@@ -56,7 +56,7 @@ int	check_duplicates(int argc, char *argv[])
 	return (false);
 }
 
-/*	
+/*
 	Invalid inputs:
 	- Duplicate numbers
 	- Some arguments aren’t integers
@@ -81,7 +81,7 @@ int	check_errors(int argc, char **argv)
 	if (check_nonvalid(argc, argv) == true)
 		error = true;
 	if (error == true)
-	{	
+	{
 		write(2, "Error\n", 6);
 		return (1);
 	}

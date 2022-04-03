@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/29 14:53:48 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/12/19 17:44:13 by xander        ########   odam.nl         */
+/*   Updated: 2022/04/03 22:13:43 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 /*
 	I will use the Tree Sort.

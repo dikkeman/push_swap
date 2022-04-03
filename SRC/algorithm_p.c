@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 17:16:54 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2022/03/28 20:16:01 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/04/03 22:13:43 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 /*
 	Careful noet linking it in the wrong way.
