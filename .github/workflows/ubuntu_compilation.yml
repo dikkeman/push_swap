@@ -1,4 +1,4 @@
-name: Libft Ubuntu compile check CI
+name: Push_swap Ubuntu compile check CI
 
 on:
   push:
