@@ -9,13 +9,15 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v3
     - name: Moulinette
       run: curl https://raw.githubusercontent.com/42pde-bakk/push_swap/master/moulinette.sh > moulinette.sh
     - name: Get checker
-      run: curl https://projects.intra.42.fr/uploads/document/document/8292/checker_linux
+      run: curl https://projects.intra.42.fr/uploads/document/document/8291/checker_linux > checker
+    - name: Give checker permission
+      run: chmod 777 checker
     - name: Run_script
       run: bash moulinette.sh
