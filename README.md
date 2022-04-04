@@ -7,7 +7,7 @@ To succeed you’ll have to manipulate various types of algorithms and choose th
 
 #### Workflows to check Linux and macOS compilation:
 
-[![Push_swap Ubuntu compile check CI](https://github.com/xvoorvaa/push_swap/actions/workflows/ubuntu_compilation.yml/badge.svg)](https://github.com/xvoorvaa/push_swap/actions/workflows/ubuntu_compilation.yml)
+[![Push_swap MacOs compile check CI](https://github.com/xvoorvaa/push_swap/actions/workflows/MacOs_compilation.yml/badge.svg)](https://github.com/xvoorvaa/push_swap/actions/workflows/MacOs_compilation.yml)
 
 [![Push_swap Ubuntu compile check CI](https://github.com/xvoorvaa/push_swap/actions/workflows/ubuntu_compilation.yml/badge.svg)](https://github.com/xvoorvaa/push_swap/actions/workflows/ubuntu_compilation.yml)
 
