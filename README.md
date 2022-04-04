@@ -16,7 +16,7 @@ To succeed you’ll have to manipulate various types of algorithms and choose th
 You have 2 stacks named stack a and b. <br>
 At the beginning: <br>
 - The stack a contains a random amount of negative and/or positive numbers which cannot be duplicated.
-- The stack b is empty. <br> <br>
+- The stack b is empty.
 #### The goal is to sort in ascending order numbers into stack a. To do so you have the following operations at your disposal: <br>
 
  <table>
