@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2022/04/05 15:19:06 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/04/05 15:28:35 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ static bool	check_invalid_chars(char *argv[])
 	while (argv[i] != NULL)
 	{
 		if (ft_isdigit(argv[i][j]) == false)
+		{
+			write(STDERR_FILENO, "Error\n", 6);
 			return (true);
+		}
 		while (argv[i][j] != '\0')
 		{
 			if (ft_isdigit(argv[i][j]) == false)
