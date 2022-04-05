@@ -1,3 +1,5 @@
+name: 42 norminette v3
+
 on: [push, pull_request]
 
 jobs:

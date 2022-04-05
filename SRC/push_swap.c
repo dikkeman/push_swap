@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/15 14:22:19 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2022/03/28 20:30:43 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/04/05 15:19:06 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ static bool	check_invalid_chars(char *argv[])
 		while (argv[i][j] != '\0')
 		{
 			if (ft_isdigit(argv[i][j]) == false)
+			{
+				write(STDERR_FILENO, "Error\n", 6);
 				return (true);
+			}
 			j++;
 		}
 		j = 0;
@@ -63,10 +66,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (check_invalid_chars(argv) == true)
-	{
-		write(STDERR_FILENO, "Error\n", 6);
 		return (1);
-	}
 	while (i < argc)
 	{
 		new_node(&stack_a, ft_atoi(argv[i]), 0);
