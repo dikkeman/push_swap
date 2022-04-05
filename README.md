@@ -11,6 +11,10 @@ To succeed you’ll have to manipulate various types of algorithms and choose th
 
 [![Push_swap Ubuntu compile check CI](https://github.com/xvoorvaa/push_swap/actions/workflows/ubuntu_compilation.yml/badge.svg)](https://github.com/xvoorvaa/push_swap/actions/workflows/ubuntu_compilation.yml)
 
+#### Workflow to check norminette v3:
+
+[![42 norminette v3](https://github.com/xvoorvaa/push_swap/actions/workflows/42_norminette.yml/badge.svg)](https://github.com/xvoorvaa/push_swap/actions/workflows/42_norminette.yml)
+
 ### The rules
 
 You have 2 stacks named stack a and b. <br>
