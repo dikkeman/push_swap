@@ -7,6 +7,10 @@ on:
     branches: [ master ]
 
 jobs:
+  script:
+      - false || exit_code=$?
+      - if [ $exit_code -ne 0 ]; then echo "Previous command failed"; fi;
+
   build:
 
     runs-on: ubuntu-latest
