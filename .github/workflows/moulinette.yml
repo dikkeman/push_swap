@@ -1,0 +1,25 @@
+name: Moulinette Tester
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: make re
+      run: make re
+    - name: curl moulinette.sh
+      run: curl https://raw.githubusercontent.com/42pde-bakk/push_swap/master/moulinette.sh -o moulinette.sh
+    - name: curl checker
+      run: curl https://projects.intra.42.fr/uploads/document/document/8291/checker_Mac -o checker
+    - name: Give permission curled files
+      run: chmod 777 checker moulinette.sh
+    - name: Run moulinette.sh
+      run: bash moulinette.sh
